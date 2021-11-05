@@ -2,5 +2,8 @@
     "editor.defaultFormatter": "vscode.html-language-features",
     "[css]": {
         "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "SimonSiefke.prettier-vscode"
     }
 }
