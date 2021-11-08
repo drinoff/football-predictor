@@ -6,7 +6,7 @@ const User = () => {
     <div className = "userHeaderCard">
       <Avatar 
       alt="Mehmet Ismail" 
-      src="/Assets/images/drinoff.jpg" 
+      src="../../Assets/images/drinoff.jpg" 
       sx={{ width: 54, height: 54 }}
       />
       <a href="http://">Профил</a>
