@@ -9,8 +9,8 @@ const User = () => {
       src="/Assets/images/drinoff.jpg" 
       sx={{ width: 54, height: 54 }}
       />
-      <a href="#">Профил</a>
-      <a href="#">Мои Прогнози</a>
+      <a href="http://">Профил</a>
+      <a href="http://">Мои Прогнози</a>
     </div>
   );
 }
