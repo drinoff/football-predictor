@@ -5,6 +5,8 @@
     border-bottom: 1px solid #2D3748;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0px;
     border-radius: 6px;
 }
+
