@@ -5,12 +5,6 @@
     border-bottom: 1px solid #2D3748;
     display: flex;
     justify-content: space-between;
-    margin: 0px;;
-}
-
-.header img{
-    width:30px;
-    height:40px;
-    margin-left: 30px;
-    
+    margin: 0px;
+    border-radius: 6px;
 }
