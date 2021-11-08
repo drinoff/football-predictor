@@ -1,8 +1,8 @@
 import NavBar from './NavBar/NavBar';
 import User from '../User/User';
+import './Header.css';
 
 
-import './header.css'
 
 const Header = () =>{
     return (
