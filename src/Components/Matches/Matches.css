@@ -1,0 +1,11 @@
+.pageContainer{
+    display: flex;
+    flex-direction: row;
+}
+.matchesContainer,
+.matchDetailsContainer{
+    margin-top: 40px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
