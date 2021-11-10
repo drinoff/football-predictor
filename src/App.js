@@ -12,7 +12,7 @@ function App() {
         <Header />
 
         <Routes>
-        <Route path="/matches" element={<Matches />} />
+        <Route path="/" element={<Matches />} />
         
       </Routes>
     </div>)
