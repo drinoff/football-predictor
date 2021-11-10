@@ -1,0 +1,23 @@
+.singleMatchContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #75FAC8;
+    
+}
+.scoreWrapper{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40%;
+}
+.singleMatchContainer p{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.singleMatchContainer:hover{
+    background-color: #161D2C;
+    cursor: pointer;
+}

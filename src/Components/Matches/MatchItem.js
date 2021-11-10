@@ -1,10 +1,16 @@
-const MatchItem = (props) => {
+import "./MatchItem.css";
 
-    <div>
-        <p>{props.children}</p>
-        
-    </div>
-}
-
+const MatchItem = ({ match }) => {
+    return (
+        <div className="singleMatchContainer">
+            <p className="homeTeam">{match.homeTeam}</p>
+            <div className = 'scoreWrapper'>
+                <p className="homeTeamScore">{match.currentHomeScore}</p> :
+                <p className="awayTeamScore">{match.currentAwayScore}</p>
+            </div>
+            <p className="awayTeam">{match.awayTeam}</p>
+        </div>
+    );
+};
 
 export default MatchItem;
