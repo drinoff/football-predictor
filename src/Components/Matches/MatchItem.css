@@ -3,21 +3,35 @@
     justify-content: flex-start;
     align-items: center;
     color: #75FAC8;
+    font-size: 12px
     
+}
+.homeTeam{
+    flex-basis: 0;
+    flex: 1 1 0px;
 }
 .scoreWrapper{
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 40%;
+    flex-basis: 0;
+    flex: 0.2 0.5 0px;
+    
 }
 .singleMatchContainer p{
     margin-left: 5px;
     margin-right: 5px;
+    flex-basis: 0;
+    flex: 0.25 1 0px;
 }
 
 .singleMatchContainer:hover{
     background-color: #161D2C;
     cursor: pointer;
+}
+.koTime{
+    color: white;
+    flex-basis: 0;
+    flex: 0.2 0.5 0px;
 }
