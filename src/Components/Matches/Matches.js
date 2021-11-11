@@ -11,7 +11,6 @@ const Matches = () => {
 
     useEffect(() => {
         fetch('/.netlify/functions/fetchMatches')
-            .then(res => res.json())
             .then(data => {
                 console.log(data)
                 setMatches(data);
@@ -25,10 +24,10 @@ const Matches = () => {
                 className="matchesContainer"
                 sx={{ bgcolor: "#111827", height: "auto", width: "55%" }}
             >
-                {matches.map(match => <MatchItem
+                {/* {matches.map(match => <MatchItem
                 match = {match}
                 key = {match.id}
-                />)}
+                />)} */}
             </Box>
             <Box
                 className="matchDetailsContainer"
