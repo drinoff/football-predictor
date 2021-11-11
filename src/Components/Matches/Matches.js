@@ -11,12 +11,12 @@ const Matches = () => {
 
     useEffect(() => {
         fetch('/.netlify/functions/fetchMatches')
-            .then(data => {
-                console.log(data)
-                setMatches(data);
-                
-            })
-            .catch(err => console.log(err));
+        .then(data => {
+            console.log(data)
+            setMatches(data);
+            
+        })
+        .catch(err => console.log(err));
     },[]);
     return (
         <div className="pageContainer" width="80%">
