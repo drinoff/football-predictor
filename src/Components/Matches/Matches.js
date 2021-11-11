@@ -10,11 +10,11 @@ const Matches = () => {
     const [matches, setMatches] = useState([]);
 
     useEffect(() => {
-        fetch("https://football-predictor-3416d-default-rtdb.europe-west1.firebasedatabase.app/liveMatches.json")
+        fetch('/.netlify/functions/fetchMatches')
             .then(res => res.json())
             .then(data => {
-                console.log(data.liveMatches)
-                setMatches(data.liveMatches);
+                console.log(data)
+                setMatches(data);
                 
             })
             .catch(err => console.log(err));
