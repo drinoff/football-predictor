@@ -2,10 +2,56 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #BECAFF;
+    color: #7582EB;
+    
 }
 .homeAwaySeparator{
     margin-left: 20px;
     margin-right: 20px;
     font-size: 33px;
+}
+.detailPageTeamLogo{
+    width: 30px;
+    height: 30px;
+}
+.teamNamesDetailPage{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+.seasonRoundInfo{
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: #FFB020;
+    margin-top: -50px;
+}
+.seasonDetail,
+.venueName{
+    padding-right: 20px;
+}
+
+.venueAndCity{
+    display: flex;
+    justify-content: center;
+    color: #FFB020;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: -20px;
+}
+.refereeAndDate{
+    color: #FFB020;
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: -20px;
+}
+.eventReferee{
+    margin-top: -10px;
+}
+.h2hChart{
+    display: flex;
+    justify-content: center;
 }
