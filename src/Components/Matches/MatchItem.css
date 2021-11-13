@@ -6,32 +6,53 @@
     font-size: 12px
     
 }
-.homeTeam{
-    flex-basis: 0;
-    flex: 1 1 0px;
-}
+.teamResultWrapper{
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+}  
+
 .scoreWrapper{
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 0;
-    flex: 0.2 0.5 0px;
+    width:20%;
+    
+    
     
 }
 .singleMatchContainer p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-left: 5px;
     margin-right: 5px;
-    flex-basis: 0;
-    flex: 0.25 1 0px;
+    
 }
 
 .singleMatchContainer:hover{
     background-color: #161D2C;
     cursor: pointer;
 }
-.koTime{
-    color: white;
-    flex-basis: 0;
-    flex: 0.2 0.5 0px;
+.nationFlag,
+.leagueName{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+.matchStatus{
+    padding-left: 20px;
+    padding-right: 40px;
+    width: 5%;
+}
+
+.homeTeam,
+.awayTeam{
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
