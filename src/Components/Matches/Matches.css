@@ -1,6 +1,7 @@
 .pageContainer{
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 .matchesContainer,
 .matchDetailsContainer{
@@ -8,4 +9,10 @@
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+    
+    
+}
+.matchDetailsContainer{
+    position: sticky;
+    top: 40px;
 }
