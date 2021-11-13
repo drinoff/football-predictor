@@ -1,0 +1,11 @@
+.headingMatchDetail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #BECAFF;
+}
+.homeAwaySeparator{
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 33px;
+}
