@@ -36,17 +36,17 @@
     cursor: pointer;
 }
 .nationFlag,
-.leagueName{
+.countryName{
     width: 20px;
     height: 20px;
-    margin-right: 10px;
-    margin-left: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
     
 }
 .matchStatus{
-    padding-left: 20px;
-    padding-right: 40px;
-    width: 5%;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 1%;
 }
 
 .homeTeam,
@@ -55,4 +55,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+}
+.leagueName{
+    width: 150px;
+    
 }

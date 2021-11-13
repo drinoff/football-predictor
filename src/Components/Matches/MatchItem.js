@@ -11,7 +11,8 @@ const MatchItem = ({ match, onClick }) => {
                 src={match.league.flag}
                 alt={match.league.name}
             />
-            <p className="leagueName">{match.league.country}</p>
+            <p className="countryName">{match.league.country}</p>
+            <p className="leagueName">{match.league.name}</p>
             <p className="matchStatus">{match.fixture.status.short}</p>
 
             <div className="teamResultWrapper">
