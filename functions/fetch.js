@@ -1,4 +1,4 @@
-import {date} from './todayDate';
+const date = require ('./todayDate');
 const fetch = require("node-fetch");
 
 
