@@ -17,15 +17,15 @@ const Matches = () => {
         
         fetch('/.netlify/functions/fetch'
         )
-        .then(response => response.json())
-            .then((data) => {
-                console.log(JSON.parse(data))
-                let sortedData = data.response.sort((a, b) =>
-                    a.league.country > b.league.country ? 1 : -1
-                );
-                setMatches(sortedData);
-            })
-            .catch((error) => console.log("error", error));
+        .then(res => res.json())
+        .then((data) => {
+            console.log(data)
+            let sortedData = data.detail.response.sort((a, b) =>
+                a.league.country > b.league.country ? 1 : -1
+            );
+            setMatches(sortedData);
+        })
+        .catch((error) => console.log("error", error));
     }, []);
     const onMatchClickHandler = (id) => {
         const selectedMatch = matches.find((match) => match.fixture.id === id);
