@@ -14,15 +14,12 @@ const Matches = () => {
     
 
     useEffect(() => {
-        const tzUser = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        fetch(`https://v3.football.api-sports.io/fixtures?date=2021-11-13&timezone=${tzUser}`,{
-                headers: {
-                    "x-apisports-key": process.env.REACT_APP_FOOTBALL_API_KEY,
-                },
-            }
+        
+        fetch('/.netlify/functions/fetch'
         )
-            .then((res) => res.json())
+        .then(response => response.json())
             .then((data) => {
+                console.log(JSON.parse(data))
                 let sortedData = data.response.sort((a, b) =>
                     a.league.country > b.league.country ? 1 : -1
                 );
@@ -42,7 +39,6 @@ const Matches = () => {
         })
         .then((res) => res.json())
         .then((data) => {
-            console.log(data)
         seth2h(data)});
     };
     return (
