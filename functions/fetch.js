@@ -5,7 +5,7 @@ const fetch = require("node-fetch");
 const REACT_APP_FOOTBALL_API_KEY = process.env.FOOTBALL_API_KEY;
 const tzUser = 'Europe/London';
 
-const API_ENDPOINT = `https://v3.football.api-sports.io/fixtures?date=${date}&timezone=${tzUser}`;
+const API_ENDPOINT = `https://v3.football.api-sports.io/fixtures?date=${date.TodayDate()}&timezone=${tzUser}`;
 
 exports.handler = async (event, context) => {
   try {
