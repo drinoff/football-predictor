@@ -18,4 +18,4 @@ const date = {
     TodayDate
 }
 
-export default date;
+module.exports = date;
