@@ -20,11 +20,11 @@ const Chart = ({h2h}) => {
 
     return (
         <Doughnut
-            className="doughnutChart"
+           
             data={data}
             width={500}
             height={250}
-            // options={{ maintainAspectRatio: false, responsive: false }}
+            options={{ maintainAspectRatio: false, responsive: false }}
         />
     );
 };
