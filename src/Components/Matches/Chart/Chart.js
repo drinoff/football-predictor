@@ -8,7 +8,7 @@ const Chart = ({h2h}) => {
         labels: ["Home Wins", "Away Wins", "Draws"],
         datasets: [
             {
-                label: "Head to Head",
+                label: "# of Votes",
                 data: [homeWins, awayWins, draws],
                 backgroundColor: ["#7582EB", "#75FAC8", "#FFB020"],
                 borderColor: ["#7582EB", "#75FAC8", "#FFB020"],
@@ -17,13 +17,10 @@ const Chart = ({h2h}) => {
             },
         ],
     };
-
+    console.log(data)
     return (
         <Doughnut
             data={data}
-            width={500}
-            height={250}
-            options={{ maintainAspectRatio: false, responsive: false }}
         />
     );
 };
