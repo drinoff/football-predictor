@@ -1,6 +1,5 @@
 import todaysDate from '../utils/todaysDate.js';
 import {tzUser} from '../utils/timeZoneFinder.js';
-import {API_KEY} from '../functions/getApiKey.js';
 
 const BASE_URL = 'https://v3.football.api-sports.io/';
 
