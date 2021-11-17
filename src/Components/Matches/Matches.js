@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import MatchItem from "./MatchItem";
 import MatchDetail from "./MatchDetail";
+import matchServices from "../../services/matchServices";
 
 import "./Matches.css";
 
@@ -12,15 +13,11 @@ const Matches = () => {
     const [matchDetail, setMatchDetail] = useState();
     const [h2h,seth2h] = useState();
     
-
+    console.log(h2h,matches)
     useEffect(() => {
-        
-        fetch('/.netlify/functions/fetch'
-        )
-        .then(res => res.json())
+        matchServices.getAllMatches()
         .then((data) => {
-            console.log(data)
-            let sortedData = data.detail.response.sort((a, b) =>
+            let sortedData = data.response.sort((a, b) =>
                 a.league.country > b.league.country ? 1 : -1
             );
             setMatches(sortedData);
@@ -32,12 +29,7 @@ const Matches = () => {
         setMatchDetail(selectedMatch);
         const homeId = selectedMatch.teams.home.id;
         const awayId = selectedMatch.teams.away.id;
-        fetch(`https://v3.football.api-sports.io/fixtures/headtohead?h2h=${homeId}-${awayId}`,{
-            headers: {
-                "x-apisports-key": process.env.REACT_APP_FOOTBALL_API_KEY,
-            }
-        })
-        .then((res) => res.json())
+        matchServices.getH2H(homeId,awayId)
         .then((data) => {
         seth2h(data)});
     };
