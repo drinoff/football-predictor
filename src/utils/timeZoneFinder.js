@@ -1,0 +1,1 @@
+export const tzUser = Intl.DateTimeFormat().resolvedOptions().timeZone;
