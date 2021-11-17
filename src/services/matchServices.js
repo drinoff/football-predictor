@@ -4,7 +4,7 @@ import {tzUser} from '../utils/timeZoneFinder.js';
 const BASE_URL = 'https://v3.football.api-sports.io/';
 
 const getAllMatches = ()=>{
-    return fetch(`${BASE_URL}fixtures?date=2021-11-20&timezone=${tzUser}`,{
+    return fetch(`${BASE_URL}fixtures?date=${todaysDate()}&timezone=${tzUser}`,{
         headers: {
             "x-apisports-key": process.env.REACT_APP_FOOTBALL_API_KEY,
         }
