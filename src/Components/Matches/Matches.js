@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 
 
-import { Box } from "@mui/material";
+import { Box} from "@mui/material";
 import MatchItem from "./MatchItem";
 import MatchDetail from "./MatchDetail";
+import FilterButtonContainer from "./FilterButtonContainer/FilterButtonContainer";
+
 import matchServices from "../../services/matchServices";
 
 import "./Matches.css";
@@ -12,8 +14,9 @@ const Matches = () => {
     const [matches, setMatches] = useState([]);
     const [matchDetail, setMatchDetail] = useState();
     const [h2h,seth2h] = useState();
+    const [filteredMatches, setFilteredMatches] = useState([]);
     
-    console.log(h2h,matches)
+
     useEffect(() => {
         matchServices.getAllMatches()
         .then((data) => {
@@ -21,9 +24,11 @@ const Matches = () => {
                 a.league.country > b.league.country ? 1 : -1
             );
             setMatches(sortedData);
+            setFilteredMatches(sortedData);
         })
         .catch((error) => console.log("error", error));
     }, []);
+
     const onMatchClickHandler = (id) => {
         const selectedMatch = matches.find((match) => match.fixture.id === id);
         setMatchDetail(selectedMatch);
@@ -31,15 +36,33 @@ const Matches = () => {
         const awayId = selectedMatch.teams.away.id;
         matchServices.getH2H(homeId,awayId)
         .then((data) => {
-        seth2h(data)});
+        seth2h(data)})
+        .catch((error) => console.log("error", error));
     };
+
+    const onFilterButtonClickHandler = (e) => {
+        setFilteredMatches(matchServices.sortMatchesByCountry(matches, e.target.textContent));
+    }
+    
+    const onSearchButtonChangeHandler = (e) =>{
+        setFilteredMatches(matchServices.searchMatch(filteredMatches,e.target.value));
+    }
+
+
     return (
+        <>
+        <FilterButtonContainer 
+        onButtonClick={onFilterButtonClickHandler}
+        onSearchButtonChange = {onSearchButtonChangeHandler}
+        />
+        
         <div className="pageContainer" width="80%">
+            
             <Box
                 className="matchesContainer"
                 sx={{ bgcolor: "#111827", height: "auto", width: "45%" }}
             >
-                {matches.map((match) => (
+                {filteredMatches.map((match) => (
                     <MatchItem
                         match={match}
                         key={match.fixture.id}
@@ -62,6 +85,7 @@ const Matches = () => {
                   />}
             </Box>
         </div>
+        </>
     );
 };
 

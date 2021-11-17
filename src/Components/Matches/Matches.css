@@ -4,7 +4,7 @@
 }
 
 .matchesContainer, .matchDetailsContainer {
-    margin-top: 40px;
+    margin-top: 5px;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -13,5 +13,5 @@
 .matchDetailsContainer {
     position: -webkit-sticky;
     position: sticky;
-    top: 40px;
+    top: 5px;
 }

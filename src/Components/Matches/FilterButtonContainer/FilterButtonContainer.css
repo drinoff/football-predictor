@@ -1,0 +1,15 @@
+.countryFilter{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 0px;
+    margin-left: 95px;
+    
+}
+.countryFilterButton{
+    font-size: 10px !important;
+    color: #FFB020 !important;
+    margin-bottom: -7px !important;
+    margin-top: 20px !important;
+    
+}
