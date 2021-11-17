@@ -1,0 +1,15 @@
+.matchSearchField{
+    border: 1px solid #75FAC8;
+    height: 22px;
+    width: 130px;
+    margin-top: 25px;
+    margin-left: 10px;
+    color: #75FAC8;
+    background: #0B0F19;
+}
+.searchIcon{
+    height: 27px;
+    margin-left: 5px;
+    color: white;
+    margin-top: 24px;
+}

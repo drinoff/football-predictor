@@ -4,7 +4,7 @@ import {tzUser} from '../utils/timeZoneFinder.js';
 const BASE_URL = 'https://v3.football.api-sports.io/';
 
 const getAllMatches = ()=>{
-    return fetch(`${BASE_URL}fixtures?date=${todaysDate()}&timezone=${tzUser}`,{
+    return fetch(`${BASE_URL}fixtures?date=2021-11-20&timezone=${tzUser}`,{
         headers: {
             "x-apisports-key": process.env.REACT_APP_FOOTBALL_API_KEY,
         }
@@ -22,12 +22,53 @@ const getH2H = (homeId,awayId)=>{
 }
 
 const sortMatchesByCountry = (matches, country)=>{
-    matches.filter((match) => match.league.country === country)
+    let filteredMatches = [];
+    let ids = [];
+    switch (country) {
+        case 'England':
+            ids = [39,40,41,42,43,44,45,46,47,48]
+            filteredMatches = matches.filter((match) => match.league.country === country && ids.includes(match.league.id))
+                          .sort((a,b) => a.league.id > b.league.id ? 1 : -1);
+        break;
+        case 'Italy':
+            ids = [135,136,137,138,139,547,705,706]
+            filteredMatches = matches.filter((match) => match.league.country === country && ids.includes(match.league.id))
+                          .sort((a,b) => a.league.id > b.league.id ? 1 : -1);
+        break;
+        case 'France':
+            ids = [61,62,63,64,65,66,]
+            filteredMatches = matches.filter((match) => match.league.country === country && ids.includes(match.league.id))
+                          .sort((a,b) => a.league.id > b.league.id ? 1 : -1);
+        break;
+        case 'Germany':
+            ids = [78,79,80,81,82,83,84,85,86,87,529]
+            filteredMatches = matches.filter((match) => match.league.country === country && ids.includes(match.league.id))
+                          .sort((a,b) => a.league.id > b.league.id ? 1 : -1);
+        break;
+        case 'Spain':
+            ids = [140,141,142,143,435,436,437,438,556,692]
+            filteredMatches = matches.filter((match) => match.league.country === country && ids.includes(match.league.id))
+                          .sort((a,b) => a.league.id > b.league.id ? 1 : -1);
+        break;
+        default:
+            filteredMatches = matches;
+    }
+    return filteredMatches;
+   
+      
+}
+
+const searchMatch = (matches,searchString)=>{
+    console.log(searchString)
+    return matches.filter(match => match.teams.home.name.includes(searchString) 
+                                || match.teams.away.name.includes(searchString))
 }
 
 const matchServices = {
     getAllMatches,
     getH2H,
+    sortMatchesByCountry,
+    searchMatch
 }
 
 export default matchServices; 
