@@ -1,1 +1,1 @@
-export const creds = process.env.FOOTBALL_API_KEY;
+export const API_KEY = process.env.FOOTBALL_API_KEY;
