@@ -60,8 +60,8 @@ const sortMatchesByCountry = (matches, country)=>{
 
 const searchMatch = (matches,searchString)=>{
     console.log(searchString)
-    return matches.filter(match => match.teams.home.name.includes(searchString) 
-                                || match.teams.away.name.includes(searchString))
+    return matches.filter(match => match.teams.home.name.toLowerCase().includes(searchString) 
+                                || match.teams.away.name.toLowerCase().includes(searchString))
 }
 
 const matchServices = {

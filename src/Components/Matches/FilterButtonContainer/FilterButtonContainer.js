@@ -5,6 +5,7 @@ import "./FilterButtonContainer.css";
 
 const FilterButtonContainer = (props) => {
     const countries = [
+        'All',
         'England',
         'Italy',
         'France',
