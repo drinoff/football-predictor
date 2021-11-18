@@ -1,12 +1,13 @@
 import todaysDate from '../utils/todaysDate.js';
 import {tzUser} from '../utils/timeZoneFinder.js';
+import getApiKey from '../functions/getApiKey';
 
 const BASE_URL = 'https://v3.football.api-sports.io/';
 
 const getAllMatches = ()=>{
     return fetch(`${BASE_URL}fixtures?date=${todaysDate()}&timezone=${tzUser}`,{
         headers: {
-            "x-apisports-key": '63386f355c9be795e7feeb0b81b3dbef',
+            "x-apisports-key": getApiKey(),
         }
     })
     .then((res) => res.json())
