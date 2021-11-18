@@ -1,0 +1,18 @@
+.talkToUs{
+    font-size: 66px;
+}
+.contactHeading{
+    margin-top: 70px;
+}
+.contactParagraph{
+    color: #7582EB;
+    font-size: 22px;
+}
+.contactParagraphWrapper{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.fpTeam{
+    color: #66788A;
+}

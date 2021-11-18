@@ -1,0 +1,76 @@
+.formStyle {
+    width: 40%;
+    height: 30px;
+    background: transparent;
+    border: 1px solid #2D3748;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    resize: none;
+}
+
+.formStyle:hover {
+    border: 1px solid white;
+}
+
+.formStyle:focus {
+    outline: none;
+    border: 2px solid #7582EB;
+}
+
+.contactFormStyle {
+    margin-top: 50px;
+}
+
+.name,
+.email,
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+
+}
+
+textarea {
+    width: 40%;
+    height: 150px;
+    background: transparent;
+    border: 1px solid #2D3748;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    resize: none;
+}
+
+textarea:hover {
+    border: 1px solid white;
+}
+
+textarea:focus {
+    outline: none !important;
+    border: 2px solid #7582EB
+}
+
+.contactFormButton {
+    background: #7582EB;
+    width: 40%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 900;
+}
+
+.contactFormButton:hover {
+    background: #515BA4;
+    cursor: pointer;
+}
+
+.name label,
+.email label,
+.message label {
+    margin-bottom: 5px;
+}
