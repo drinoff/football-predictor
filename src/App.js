@@ -7,6 +7,7 @@ import Matches from "./Components/Matches/Matches";
 import Predictions from "./Components/Predictions/Predictions";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
+import CreatePrediction from "./Components/CreatePrediction/CreatePrediction";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="predictions" element={<Predictions />} />
                 <Route path="about" element={<About />} />
                 <Route path="contact" element={<Contact />} />
+                <Route path="create" element={<CreatePrediction />} />
             </Routes>
         </div>
     );
