@@ -1,3 +1,5 @@
+import {Link} from 'react-router-dom';
+
 import { Avatar } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Badge from "@mui/material/Badge";
@@ -46,8 +48,10 @@ const User = () => {
                     sx={{ width: "54px", height: "54px" }}
                 />
             </StyledBadge>
-            <a href="http://">My Profile</a>
-            <a href="http://">My Predictions</a>
+            <Link to ='profile'>My Profile</Link>
+            <Link to ='myPredictions'>My Predictions</Link>
+            <Link to ='create'>Create Prediction</Link>
+            
         </div>
     );
 };

@@ -61,16 +61,25 @@ const sortMatchesByCountry = (matches, country)=>{
 }
 
 const searchMatch = (matches,searchString)=>{
-    console.log(searchString)
     return matches.filter(match => match.teams.home.name.toLowerCase().includes(searchString) 
                                 || match.teams.away.name.toLowerCase().includes(searchString))
+}
+
+const getMatchPrediction = (fixture) =>{
+    return fetch(`${BASE_URL}predictions?fixture=${fixture}`,{
+        headers: {
+            "x-apisports-key": '63386f355c9be795e7feeb0b81b3dbef',
+        }
+    })
+    .then(res=>res.json())
 }
 
 const matchServices = {
     getAllMatches,
     getH2H,
     sortMatchesByCountry,
-    searchMatch
+    searchMatch,
+    getMatchPrediction
 }
 
 export default matchServices; 
