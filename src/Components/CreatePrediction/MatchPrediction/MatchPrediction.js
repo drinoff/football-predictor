@@ -5,7 +5,6 @@ import "./MatchPrediction.css";
 
 const MatchPrediction = ({ prediction, h2h, matchDetail }) => {
     const radarData = prediction.response[0].comparison;
-    console.log(prediction);
     const data = {
         labels: [
             "Attacking",
