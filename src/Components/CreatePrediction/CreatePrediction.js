@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
-import matchServices from "../../services/matchServices";
+
 import { Box } from "@mui/material";
 import MatchItem from "../Matches/MatchItem";
 import MatchPrediction from "./MatchPrediction/MatchPrediction";
+
+import matchServices from "../../services/matchServices";
+import predictionServices from "../../services/predictionServices";
+
 
 import "./CreatePrediction.css";
 
@@ -11,6 +15,8 @@ const CreatePrediction = () => {
     const [selectedMatchPrediction, setSelectedMatchPrediction] = useState();
     const [matchDetails, setMatchDetails] = useState();
     const [selectedMatchH2H, setSelectedMatchH2h] = useState();
+    const [matchInputName,setMatchInputName] = useState();
+    const [isVisible, setIsVisible] = useState('');
 
     useEffect(() => {
         matchServices
@@ -18,12 +24,11 @@ const CreatePrediction = () => {
             .then((data) => {
                 let sortedData = data.response.sort((a, b) =>
                     a.league.country > b.league.country ? 1 : -1
-                );
+                ).filter((match) => match.fixture.status.short === "HT" || match.fixture.status.short === "NS");
                 setPredictionMatches(sortedData);
             })
             .catch((error) => console.log("error", error));
     }, []);
-
     const onMatchClickHandler = (fixture) => {
         matchServices.getMatchPrediction(fixture).then((data) => {
             setSelectedMatchPrediction(data);
@@ -32,14 +37,38 @@ const CreatePrediction = () => {
             (match) => match.fixture.id === fixture
         );
         setMatchDetails(selectedMatch);
+        setMatchInputName(selectedMatch);
         const homeId = selectedMatch.teams.home.id;
         const awayId = selectedMatch.teams.away.id;
         matchServices.getH2H(homeId, awayId).then((data) => {
             
             setSelectedMatchH2h(data);
-            
         });
     };
+
+    const onFormSubmitHandler = (e) => {
+        e.preventDefault();
+        let formData = new FormData(e.target);
+        const match = formData.get('match');
+        const prediction = formData.get('prediction');
+        const predictionDesc = formData.get('predictionDesc');
+        let body = {
+            match,
+            prediction,
+            predictionDesc,
+            selectedMatchPrediction,
+            matchDetails,
+            selectedMatchH2H
+        }
+        predictionServices.postPrediction(body)
+        setMatchInputName();
+        setSelectedMatchPrediction();
+        e.target.reset();
+        setIsVisible('successModalPopUP');
+        setTimeout(() => {
+            setIsVisible('');
+        }, 3000);
+    }
     return (
         <div className="predictionPageContainer">
             <Box
@@ -56,13 +85,18 @@ const CreatePrediction = () => {
                 ))}
             </Box>
             <div className="formWrapper">
-                <form action="POST" className="createPrediction">
+            <p id = 'successModal' className={isVisible}>S u c c e s s</p>
+                <form action="POST" className="createPrediction" onSubmit={onFormSubmitHandler}>
                     <div className="match">
                         <label htmlFor="match">Match</label>
                         <input
                             className="predictionFormStyle"
                             id="match"
                             type="text"
+                            name="match"
+                            defaultValue={matchInputName
+                                ? matchInputName.teams.home.name +" - "+ matchInputName.teams.away.name
+                            : ""}
                         />
                     </div>
 
@@ -72,16 +106,17 @@ const CreatePrediction = () => {
                             className="predictionFormStyle"
                             id="prediction"
                             type="text"
+                            name="prediction"
                         />
                     </div>
 
                     <div className="predictionDescContainer">
                         <label htmlFor="predictionDesc">Description</label>
-                        <textarea id="predictionDesc" type="text" />
+                        <textarea id="predictionDesc" type="text" name="predictionDesc"/>
                     </div>
                     <input
                         className="contactFormButton"
-                        type="button"
+                        type="submit"
                         value="Create Prediction"
                     />
                 </form>

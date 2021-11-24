@@ -4,7 +4,7 @@
     height: 470px;
 }
 .predictionContainer{
-    width: 400px !important;
+    width: 35% !important;
     display: flex;
     flex-direction: column;
     margin-left: 0px !important;
@@ -16,7 +16,7 @@
     display: none;
 }
 .formWrapper{
-    width: 45%;
+    width: 35%;
     background-color: #111827;
     margin-top: 20px;
     border-radius: 8px;
@@ -56,7 +56,7 @@
     margin-top: 50px;
 }
 .predictionContainer{
-    width: 35%;
+    width: 30%;
     border-radius: 8px;
     margin-top: 20px;
     margin-left: 20px;
@@ -72,8 +72,12 @@
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 15px;
-    width: 50%;
+    width: 80%;
 
+}
+.match input,
+.prediction input{
+    text-align: center;
 }
 
 #predictionDesc {
@@ -124,7 +128,7 @@
 }
 
 .matchPredictionDetailsContainer{
-    width: 40%;
+    width: 50%;
     height: 450px !important;
     margin-top: 20px;
     margin-left: 20px;
@@ -135,3 +139,19 @@
 .matchPredictionDetailsContainer::-webkit-scrollbar {
     display: none;
 }
+
+#successModal{
+    position: absolute;
+    left: 595px;
+    color: #75FAC8;
+    font-size: 20px;
+    text-transform: uppercase;
+    z-index: -1;
+}
+
+.successModalPopUP{
+    z-index: 3 !important;
+}
+
+
+
