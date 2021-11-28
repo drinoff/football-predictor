@@ -1,0 +1,28 @@
+.detailsPredictionPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;  
+}
+.predictionDescription,
+.predictionDetailsH2HContainer,
+.predictionDetailsContainer,
+.singlePredictionDetailContainer{
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.predictionDescription p{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 18px;
+    color: #7582EB;
+}
+.predictionDetailsContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}

@@ -1,0 +1,71 @@
+.singlePrediction{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    background: #111827;
+    color: #75FAC8;
+    margin-top: 10px;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    width: 70%;
+    height: 80px;
+    flex-basis: 1 1 auto;
+    position: relative;
+}
+
+.teamNamesAndFlags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    width: 60%;
+    
+}
+
+.flag{
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+    padding-left: 10px;
+
+}
+.teamPredictionNames{
+    width: 50%;
+}
+.matchPrediction{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.predictionDetailsButton{
+    width:150px;
+    padding: 12px 12px 12px 12px;
+    background: transparent;
+    border: 1px solid #515BA4;
+    color: #7582EB;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.predictionDetailsButton:hover{
+    border-color: #7582EB;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.predictionStatus .fa-check{
+    font-size: 30px;
+}
+.predictionStatus .fa-times{
+    font-size: 30px;
+    color: red;
+}
+.predictionsStatusDetailPage{
+    position: absolute;
+    right: -250px;
+}
