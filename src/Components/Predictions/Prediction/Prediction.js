@@ -36,7 +36,7 @@ const Prediction = ({ matchInfo, isRender, detailsStyle }) => {
                 {matchInfo.matchDetails.predictionStatus === true ? (
                     <span className = {`predictionStatus ${detailsStyle}`}>{matchstatus === "FT" ? <i className="fas fa-check"></i> : ""}</span>
                 ) : (
-                    <span className = {`predictionStatus ${detailsStyle}`} >{matchstatus === "FT" ? <i className="fas fa-check"></i> : ""}</span>
+                    <span className = {`predictionStatus ${detailsStyle}`} >{matchstatus === "FT" ? <i className="fas fa-times"></i> : ""}</span>
                 )}
             </article>
         </>
