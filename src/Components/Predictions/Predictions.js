@@ -37,7 +37,7 @@ const Predictions = (props) => {
                 setPredictions(futureData);
                 setOldPredictions(oldData);
                 console.log(oldData);
-            }, 500);
+            }, 1000);
         });
     }, []);
 

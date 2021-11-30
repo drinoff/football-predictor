@@ -4,6 +4,7 @@ import "./Prediction.css";
 
 const Prediction = ({ matchInfo, isRender, detailsStyle }) => {
     const urlMatchInfo = matchInfo.match.replaceAll(" ", "");
+    const matchstatus = matchInfo.matchDetails.fixture.status.short;
 
     return (
         <>
@@ -31,10 +32,11 @@ const Prediction = ({ matchInfo, isRender, detailsStyle }) => {
                         Details
                     </Link>
                 )}
+                
                 {matchInfo.matchDetails.predictionStatus === true ? (
-                    <span className = {`predictionStatus ${detailsStyle}`}><i className="fas fa-check"></i></span>
+                    <span className = {`predictionStatus ${detailsStyle}`}>{matchstatus === "FT" ? <i className="fas fa-check"></i> : ""}</span>
                 ) : (
-                    <span className = {`predictionStatus ${detailsStyle}`} ><i className="fas fa-times"></i></span>
+                    <span className = {`predictionStatus ${detailsStyle}`} >{matchstatus === "FT" ? <i className="fas fa-check"></i> : ""}</span>
                 )}
             </article>
         </>
