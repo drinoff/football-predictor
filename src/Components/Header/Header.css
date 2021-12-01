@@ -11,3 +11,21 @@
     
 }
 
+.invisible {
+    z-index: -2;
+}
+.guestWelcome{
+    display: flex;
+    flex-direction: column;
+    color: #7582EB;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.guestWelcome p{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
