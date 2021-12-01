@@ -1,0 +1,76 @@
+.loginContainer{
+    width: 35% !important;
+    height: 500px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    border-radius: 12px;
+    
+}
+.pleaseLogin{
+    color: #7582EB;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.emailContainer,
+.passwordContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    width: 80%;
+    
+}
+.loginFormInputStyle{
+    width: 70%;
+    height: 30px;
+    background: transparent;
+    border: 1px solid #2D3748;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    resize: none;
+}
+.loginFormInputStyle:hover {
+    border: 1px solid white;
+}
+
+.loginFormInputStyle:focus {
+    outline: none;
+    border: 1px solid #7582EB;
+}
+.emailContainer label,
+.passwordContainer label{
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+}
+
+.loginButton {
+    background: #7582EB;
+    width: 40%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 900;
+}
+
+.loginButton:hover {
+    background: #515BA4;
+    cursor: pointer;
+}
+
