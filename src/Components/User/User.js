@@ -34,9 +34,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
 }));
 
-const User = () => {
+const User = ({display, email}) => {
     return (
-        <div className="userHeaderCard">
+        <div className={display==='invisible'?'invisible':'userHeaderCard'}>
             <StyledBadge
                 overlap="circular"
                 anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
@@ -48,6 +48,7 @@ const User = () => {
                     sx={{ width: "54px", height: "54px" }}
                 />
             </StyledBadge>
+            <h2>{email}</h2>
             <Link to ='profile'>My Profile</Link>
             <Link to ='myPredictions'>My Predictions</Link>
             <Link to ='create'>Create Prediction</Link>
