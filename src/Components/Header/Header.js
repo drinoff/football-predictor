@@ -6,21 +6,21 @@ import User from "../User/User";
 import "./Header.css";
 
 const Header = () => {
-    const { isAuthenticated, email } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
-    console.log(email,isAuthenticated);
+    console.log(user.email,user.isAuthenticated);
 
     return (
         <div className="header">
-            {isAuthenticated ? (
-                <User email={email} />
+            {user.isAuthenticated ? (
+                <User email={user.email} />
             ) : (
                 <div className="guestWelcome">
                     <p> Welcome Guest</p>
                     <p> Please Register or Sign In</p>
                 </div>
             )}
-            <NavBar isAuthenticated/>
+            <NavBar isAuthenticated = {user.isAuthenticated}/>
         </div>
     );
 };
