@@ -9,13 +9,13 @@ import AuthContext from "../../contexts/AuthContext";
 const auth = getAuth();
 
 const Logut = () => {
-    const {user, setUser} = useContext(AuthContext);
+    const {logout} = useContext(AuthContext);
     const navigate = useNavigate();
     useEffect(() => {
     signOut(auth).then(() => {
-        setUser(null);
+        logout();
         navigate("/")});
-}, [navigate]);
+}, [navigate,logout]);
     return null
 };
 
