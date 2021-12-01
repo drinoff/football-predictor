@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import { Box } from "@mui/material";
 import MatchItem from "../Matches/MatchItem";
 import MatchPrediction from "./MatchPrediction/MatchPrediction";
 
+import AuthContext from "../../contexts/AuthContext";
 import matchServices from "../../services/matchServices";
 import predictionServices from "../../services/predictionServices";
 
@@ -17,6 +18,7 @@ const CreatePrediction = () => {
     const [selectedMatchH2H, setSelectedMatchH2h] = useState();
     const [matchInputName,setMatchInputName] = useState();
     const [isVisible, setIsVisible] = useState('');
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         matchServices
@@ -52,13 +54,15 @@ const CreatePrediction = () => {
         const match = formData.get('match');
         const prediction = formData.get('prediction');
         const predictionDesc = formData.get('predictionDesc');
+        const email = user.email;
         let body = {
             match,
             prediction,
             predictionDesc,
             selectedMatchPrediction,
             matchDetails,
-            selectedMatchH2H
+            selectedMatchH2H,
+            email
         }
         predictionServices.postPrediction(body)
         setMatchInputName();
