@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+
 import Prediction from "./Prediction/Prediction";
 
 import predictionServices from "../../services/predictionServices";
