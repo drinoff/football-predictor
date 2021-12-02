@@ -49,7 +49,6 @@ const User = ({display, email}) => {
                 />
             </StyledBadge>
             <h2>{email}</h2>
-            <Link to ='profile'>My Profile</Link>
             <Link to ='myPredictions'>My Predictions</Link>
             <Link to ='create'>Create Prediction</Link>
             

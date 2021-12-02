@@ -18,6 +18,7 @@ const Login = () => {
         const password = formData.get("password");
 
         authServices.login(email, password).then((authData) => {
+            console.log(authData)
             const user = {
                 email: authData.user.email,
                 accessToken: authData.user.accessToken,

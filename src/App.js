@@ -1,6 +1,6 @@
-import { useState} from "react";
 import { Routes, Route } from "react-router-dom";
 import AuthContext from "./contexts/AuthContext";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 import "./App.css";
 
@@ -14,6 +14,7 @@ import PredictionDetails from "./Components/Predictions/PredictionDetails/Predic
 import Login from "./Components/Login/Login";
 import Logout from "./Components/Logout/Logout";
 import Register from "./Components/Register/Register";
+import MyPredictions from "./Components/MyPredictions/MyPredictions";
 
 
 const initialUserData = {
@@ -24,7 +25,7 @@ const initialUserData = {
 }
 
 function App() {
-    const [user, setUser] = useState(initialUserData);
+    const [user, setUser] = useLocalStorage('user',initialUserData);
 
 
     const login = (userData)=>{
@@ -49,10 +50,8 @@ function App() {
                     <Route path="about" element={<About />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="create" element={<CreatePrediction />} />
-                    <Route
-                        path="predictions/:match"
-                        element={<PredictionDetails />}
-                    />
+                    <Route path="predictions/:match" element={<PredictionDetails />}/>
+                    <Route path="myPredictions" element={<MyPredictions />} />
                     <Route path="register" element={<Register />} />
                     <Route path="login" element={<Login />} />
                     <Route path="logout" element={<Logout />} />
