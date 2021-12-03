@@ -38,7 +38,6 @@ function App() {
         setUser(userData);
     }
 
-    console.log(user);
     return (
         <div className="App">
             <AuthContext.Provider value={{user,login,logout,register}}>
