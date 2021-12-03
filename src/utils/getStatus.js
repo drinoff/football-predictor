@@ -6,6 +6,8 @@ const getStatus = (match, prediction) => {
     status = true;
 }else if(prediction === 'X' && match.response[0].teams.home.winner === null){
     status = true;
+}else if(prediction === 'BTS' && match.response[0].goals.home !== 0 && match.response[0].goals.away !== 0){
+    status = true;
 }else{
     status = false;
 }
