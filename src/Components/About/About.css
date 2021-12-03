@@ -1,5 +1,5 @@
-.about{
-    width:70%;
+.about {
+    width: 70%;
     height: 500px;
     color: #EDF2F7;
     background: #111827;
@@ -10,11 +10,17 @@
     border-radius: 8px;
 }
 
-.about p{
+.about p {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    font-size: 24px;
+    background: -webkit-linear-gradient(#7582EB, #75FAC8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-.about h1{
+
+.about h1 {
     padding-top: 80px;
+    color: #673AB7;
 }
