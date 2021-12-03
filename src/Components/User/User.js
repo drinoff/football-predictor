@@ -43,10 +43,8 @@ const User = ({display, email}) => {
                 variant="dot"
             >
                 <Avatar
-                    alt="Drin Drinoff"
-                    src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/Avatars%2Fdrinoff.jpg?alt=media&token=0450cfe6-95d4-41f4-a311-35136b2e54af"
-                    sx={{ width: "54px", height: "54px" }}
-                />
+                    sx={{ width: "54px", height: "54px", bgcolor: '#673AB7'}}
+                >{email.slice(0,1).toUpperCase()}</Avatar>
             </StyledBadge>
             <h2>{email}</h2>
             <Link to ='myPredictions'>My Predictions</Link>
