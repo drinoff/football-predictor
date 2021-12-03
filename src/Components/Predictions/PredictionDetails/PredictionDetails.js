@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Box } from "@mui/system";
 import Prediction from "../Prediction/Prediction";
 import MatchPrediction from "../../CreatePrediction/MatchPrediction/MatchPrediction"
+import AdminButtons from "./AdminButtons/AdminButtons";
 
 import "./PredictionDetails.css";
 
@@ -23,6 +24,7 @@ const PredictionDetails = () => {
                     isRender={false}
                     detailsStyle = {'predictionsStatusDetailPage'}
                 />
+                <AdminButtons />
             </Box>
             <Box
                 className="predictionDescription"

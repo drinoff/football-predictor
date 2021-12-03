@@ -12,6 +12,12 @@
     border-radius: 8px;
     margin-bottom: 20px;
 }
+.singlePredictionDetailContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
 
 .predictionDescription p{
     width: 70%;
