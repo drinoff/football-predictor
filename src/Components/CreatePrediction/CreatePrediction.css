@@ -1,7 +1,7 @@
 .predictionPageContainer{
     display: flex;
     justify-content: flex-start;
-    height: 470px;
+    height: 615px;
 }
 .predictionContainer{
     width: 35% !important;
@@ -20,7 +20,7 @@
     background-color: #111827;
     margin-top: 20px;
     border-radius: 8px;
-    height: 450px;
+    height: 595px;
 }
 .createPrediction{
     display: flex;
@@ -129,7 +129,7 @@
 
 .matchPredictionDetailsContainer{
     width: 50%;
-    height: 450px !important;
+    height: 595px !important;
     margin-top: 20px;
     margin-left: 20px;
     border-radius: 8px;
