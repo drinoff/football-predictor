@@ -1,0 +1,27 @@
+.adminButtonsWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+
+}
+
+.adminButtonsStyle{
+    width:150px;
+    padding: 12px 12px 12px 12px;
+    background: transparent;
+    border: 1px solid #515BA4;
+    color: #7582EB;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition: 0.3s;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.adminButtonsStyle:hover{
+    border-color: #7582EB;
+    cursor: pointer;
+    transition: 0.3s;
+}
