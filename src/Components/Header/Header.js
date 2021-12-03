@@ -8,12 +8,12 @@ import "./Header.css";
 const Header = () => {
     const { user } = useContext(AuthContext);
 
-    console.log(user.email,user.isAuthenticated);
-
     return (
         <div className="header">
             {user.isAuthenticated ? (
-                <User email={user.email} />
+                <User 
+                email={user.email}
+                 />
             ) : (
                 <div className="guestWelcome">
                     <p> Welcome Guest</p>
