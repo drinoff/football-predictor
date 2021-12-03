@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Skeleton from '@mui/material/Skeleton';
+
 
 import "./Prediction.css";
 
@@ -22,6 +24,8 @@ const Prediction = ({ matchInfo, isRender, detailsStyle }) => {
                         alt={matchInfo.matchDetails.teams.away.name}
                     />
                 </div>
+                
+                
                 <div className="matchPrediction">{matchInfo.prediction}</div>
                 {isRender && (
                     <Link

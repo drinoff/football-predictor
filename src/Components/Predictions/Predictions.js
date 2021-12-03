@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import Skeleton from "@mui/material/Skeleton";
 
 import Prediction from "./Prediction/Prediction";
 
@@ -29,7 +29,7 @@ const Predictions = (props) => {
                     });
             });
             setTimeout(() => {
-                let futureData = data.filter(
+                let futureData = data.reverse().filter(
                     (x) => x[1].matchDetails.fixture.status.short === "NS"
                 );
                 let oldData = data.filter(
@@ -37,8 +37,7 @@ const Predictions = (props) => {
                 );
                 setPredictions(futureData);
                 setOldPredictions(oldData);
-                console.log(oldData);
-            }, 2000);
+            }, 3000);
         });
     }, []);
 
@@ -46,27 +45,73 @@ const Predictions = (props) => {
         <>
             <h3>Current Predictions</h3>
             <div className="predictionsPageContainer">
-                {predictions
-                    ? predictions.map((prediction) => (
-                          <Prediction
-                              key={prediction[0]}
-                              matchInfo={prediction[1]}
-                              isRender
-                          />
-                      ))
-                    : "There is no Predictions Currently"}
+                {predictions ? (
+                    predictions.map((prediction) => (
+                        <Prediction
+                            key={prediction[0]}
+                            matchInfo={prediction[1]}
+                            isRender
+                        />
+                    ))
+                ) : (
+                    <>
+                        <Skeleton
+                            sx={{
+                                bgcolor: "#2A3745",
+                                borderRadius: "8px",
+                                marginBottom: "20px",
+                            }}
+                            variant="rect"
+                            width="70%"
+                            height="80px"
+                        />
+                        <Skeleton
+                            sx={{
+                                bgcolor: "#2A3745",
+                                borderRadius: "8px",
+                                marginBottom: "20px",
+                            }}
+                            variant="rect"
+                            width="70%"
+                            height="80px"
+                        />
+                    </>
+                )}
             </div>
             <h3>Past Predictions</h3>
             <div className="predictionsPageContainer">
-                {oldPredictions
-                    ? oldPredictions.map((prediction) => (
-                          <Prediction
-                              key={prediction[0]}
-                              matchInfo={prediction[1]}
-                              isRender //render only if render is true
-                          />
-                      ))
-                    : "There is no Predictions Currently"}
+                {oldPredictions ? (
+                    oldPredictions.map((prediction) => (
+                        <Prediction
+                            key={prediction[0]}
+                            matchInfo={prediction[1]}
+                            isRender //render only if render is true
+                        />
+                    ))
+                ) : (
+                    <>
+                        <Skeleton
+                            sx={{
+                                bgcolor: "#2A3745",
+                                borderRadius: "8px",
+                                marginBottom: "20px",
+                            }}
+                            variant="rect"
+                            width="70%"
+                            height="80px"
+                        />
+                        <Skeleton
+                            sx={{
+                                bgcolor: "#2A3745",
+                                borderRadius: "8px",
+                                marginBottom: "20px",
+                            }}
+                            variant="rect"
+                            width="70%"
+                            height="80px"
+                        />
+                    </>
+                )}
             </div>
         </>
     );

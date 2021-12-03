@@ -6,7 +6,7 @@
     margin-bottom: 20px;
     background: #111827;
     color: #75FAC8;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 8px;
     padding-bottom: 5px;
     width: 70%;
@@ -39,6 +39,7 @@
     font-size: 22px;
     font-weight: 700;
     margin-right: 30px;
+    width: 50px;
 }
 
 .predictionDetailsButton{
@@ -53,6 +54,7 @@
     border-radius: 8px;
     transition: 0.3s;
     text-decoration: none;
+    margin-left: 40px;
 }
 .predictionDetailsButton:hover{
     border-color: #7582EB;
@@ -61,10 +63,12 @@
 }
 .predictionStatus .fa-check{
     font-size: 30px;
+    margin-left:50px;
 }
 .predictionStatus .fa-times{
     font-size: 30px;
     color: red;
+    margin-left:50px;
 }
 .predictionsStatusDetailPage{
     position: absolute;
