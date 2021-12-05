@@ -15,10 +15,17 @@ const getStatus = (match, prediction) => {
 {
     status = true;
 }
-else if(prediction === '1X' && (match.response[0].teams.home.winner === true ||match.response[0].teams.away.winner === null))
+else if(prediction === 'Over 1,5' && match.response[0].goals.home + match.response[0].goals.away > 1)
 {
     status = true;
-}else if(prediction === '1X' && (match.response[0].teams.away.winner === true ||match.response[0].teams.home.winner === null))
+}else if(prediction === 'Under 1,5' && match.response[0].goals.home + match.response[0].goals.away < 2)
+{
+    status = true;
+}
+else if(prediction === '1X' && (match.response[0].teams.home.winner === true || match.response[0].teams.away.winner === null))
+{
+    status = true;
+}else if(prediction === '2X' && (match.response[0].teams.away.winner === true || match.response[0].teams.home.winner === null))
 {
     status = true;
 }else{
