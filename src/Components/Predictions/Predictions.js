@@ -49,6 +49,7 @@ const Predictions = (props) => {
                     predictions.map((prediction) => (
                         <Prediction
                             key={prediction[0]}
+                            id = {prediction[0]}
                             matchInfo={prediction[1]}
                             isRender
                         />
@@ -84,6 +85,7 @@ const Predictions = (props) => {
                     oldPredictions.map((prediction) => (
                         <Prediction
                             key={prediction[0]}
+                            id = {prediction[0]}
                             matchInfo={prediction[1]}
                             isRender //render only if render is true
                         />
