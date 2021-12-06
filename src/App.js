@@ -15,6 +15,7 @@ import Login from "./Components/Login/Login";
 import Logout from "./Components/Logout/Logout";
 import Register from "./Components/Register/Register";
 import MyPredictions from "./Components/MyPredictions/MyPredictions";
+import Editprediction from "./Components/Predictions/EditPrediction/EditPrediction";
 
 
 const initialUserData = {
@@ -50,6 +51,7 @@ function App() {
                     <Route path="contact" element={<Contact />} />
                     <Route path="create" element={<CreatePrediction />} />
                     <Route path="predictions/:match" element={<PredictionDetails />}/>
+                    <Route path="predictions/:id/edit" element={<Editprediction />}/>
                     <Route path="myPredictions" element={<MyPredictions />} />
                     <Route path="register" element={<Register />} />
                     <Route path="login" element={<Login />} />
