@@ -13,9 +13,23 @@ const getPredictions = () => {
                 .then(response => response.json())  
 }
 
+const getPredictionById = (id) => {
+    return fetch(`${BASE_URL}predictions/${id}.json`)
+                .then(response => response.json())  
+}
+
+const editMatch = (id,body) => {
+    return fetch(`${BASE_URL}predictions/${id}.json`,{
+        method: 'PUT',
+        body: JSON.stringify(body),
+    }
+    )}
+
 const predictionServices = {
     postPrediction,
-    getPredictions
+    getPredictions,
+    getPredictionById,
+    editMatch
 }
 
 export default predictionServices;
