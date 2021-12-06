@@ -9,8 +9,7 @@ import "./PredictionDetails.css";
 
 const PredictionDetails = () => {
     const location = useLocation();
-    const { matchInfo } = location.state;
-    console.log(matchInfo);
+    const { matchInfo , id, urlMatchInfo} = location.state;
 
     return (
         <div className="detailsPredictionPage">
@@ -24,7 +23,9 @@ const PredictionDetails = () => {
                     isRender={false}
                     detailsStyle = {'predictionsStatusDetailPage'}
                 />
-                <AdminButtons />
+                <AdminButtons 
+                id = {id}
+                urlMatchInfo = {urlMatchInfo}/>
             </Box>
             <Box
                 className="predictionDescription"
