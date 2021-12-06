@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 
 import "./Prediction.css";
 
-const Prediction = ({ matchInfo, isRender, detailsStyle }) => {
+const Prediction = ({ matchInfo, isRender, detailsStyle, id }) => {
     const urlMatchInfo = matchInfo.match.replaceAll(" ", "");
     const matchstatus = matchInfo.matchDetails.fixture.status.short;
-
     return (
         <>
             <article className="singlePrediction">
@@ -31,7 +30,7 @@ const Prediction = ({ matchInfo, isRender, detailsStyle }) => {
                     <Link
                         className="predictionDetailsButton"
                         to={urlMatchInfo}
-                        state={{ matchInfo }}
+                        state={{ matchInfo,id, urlMatchInfo }}
                     >
                         Details
                     </Link>
