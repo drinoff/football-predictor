@@ -29,3 +29,51 @@
     margin-top: 10px;
     margin-bottom: 5px;
 }
+.logoContainer{
+    width: 110px;
+    height: 110px;
+    z-index: 4;
+}
+.logoContainer img{
+    width: 100%;
+    height: 100%;
+    animation: rotating 4s linear infinite;
+    
+}
+.fa-circle{
+    font-size: 110px;
+    color: #0B0F19;
+    z-index: 2;
+    position: absolute;
+    left: 500px;
+    animation: glow 1s ease-in-out infinite alternate;
+    text-transform: rotate(360deg);
+}
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
+  @keyframes rotating {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  
