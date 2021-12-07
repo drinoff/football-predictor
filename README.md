@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+<p id="start" align="center">
+<br>
+<a href="http://football-predictor.eu"><img height="170rem" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/unnamed.png?alt=media&token=14280d86-9744-4c66-a1fa-150f03e7ef04"></a>
+  <h1 align="center" color='7582EB'>Football Predictor</h1>
+  http://football-predictor.eu
+</p>
+Football Predictor is a football matches prediction Webb App. It comes with a lots of statistics, which users can check.Also users can create their own predictions.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+1. <a href="#overview">Overview</a>
+2. <a href="#builtWith">Built with</a>
+3. <a href="#appConfig">Application Configuration</a>
+4. <a href="#screens">Screen Shots</a>
+ 
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+<h2 id="overview">OverView</h2>
+Football Predictor is a web application for football predictions. It has the following functionality:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Guest Users can: 
+  - browse all matches which is playing today.Matches can be filtered by Country or searched by text.
+  - view statistic,form and charts for every match.
+  - browse all predictions and relevant statistics, made by any registered user.
+- Logged Users can:
+  - create a predictions.
+  - can see,edit and delete predictions which are theirs.
+  - like a prediction if it is not theirs
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h2 id="builtWith">Built With</h2>
 
-### `npm test`
+- React JS as Front End
+- Netlify as Back End
+- Google Real Time Data Base
+- React Router v6
+- api-football.com (3-rd party REST API)
+- Material UI (some containers)
+- React Chart JS v2
+- Firebase SDK (Authentication)
+- React Hooks (Data Persistance)
+- Context API (Keeping User Data)
+- Skeleton Loader (Material UI)
+- Custom HTML and CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2 id="appConfig">Application Configurations</h2>
+<img width="953" alt="App Diagram" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/FootballPredictor.svg?alt=media&token=f179d3c7-4049-4bd5-8b8c-304a87f8190f">
+ 
 
-### `npm run build`
+### Available Scripts
+After cloning this Repository, you can open it with any code editor.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- npm install (the scripts installs all the packages which the application depends on.)
+- npm start (A live development server start on http://localhost:3000)
+- netlify dev (starts a local development server) Netlify CLI
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Test Accounts
+   - email: test@test.com / password: 123456
+   - email: user@user.com / password: qwerty
+ 
+<h2 id="screens">Screenshots</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Home Page
 
-### `npm run eject`
+<img width="953" alt="Home page" src=>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Predictions Page
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Create Prediction
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Edit Prediction
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project is licensed under the [MIT License](LICENSE).
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
