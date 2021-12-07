@@ -2,6 +2,7 @@
 <br>
 <a href="http://football-predictor.eu"><img height="170rem" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/unnamed.png?alt=media&token=7fb8b037-bfb9-43f5-a6d8-595b0aaed22a"></a>
   <h1 align="center" color='7582EB'>Football Predictor</h1>
+  http://football-predictor.eu
 </p>
 Football Predictor is a football matches prediction Webb App. It comes with a lots of statistics, which users can check.Also users can create their own predictions.
 
@@ -42,6 +43,7 @@ Football Predictor is a web application for football predictions. It has the fol
 - Custom HTML and CSS
 
 <h2 id="appConfig">Application Configurations</h2>
+<img width="953" alt="App Diagram" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/FootballPredictor.svg?alt=media&token=f179d3c7-4049-4bd5-8b8c-304a87f8190f">
  
 
 ### Available Scripts
@@ -61,15 +63,15 @@ After cloning this Repository, you can open it with any code editor.
 
 <img width="953" alt="Home page" src=>
 
-### Search Doctors
+### Predictions Page
 
 
 
-### Book An Appointment Page
+### Create Prediction
 
 
 
-### Clinic Details
+### Edit Prediction
 
 
 
