@@ -1,6 +1,6 @@
 <p id="start" align="center">
 <br>
-<a href="http://football-predictor.eu"><img height="170rem" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/unnamed.png?alt=media&token=7fb8b037-bfb9-43f5-a6d8-595b0aaed22a"></a>
+<a href="http://football-predictor.eu"><img height="170rem" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/unnamed.png?alt=media&token=14280d86-9744-4c66-a1fa-150f03e7ef04"></a>
   <h1 align="center" color='7582EB'>Football Predictor</h1>
   http://football-predictor.eu
 </p>
