@@ -74,3 +74,21 @@
     position: absolute;
     right: 180px;
 }
+
+.likesContainer{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 10px;
+}
+
+.likesContainer i{
+    padding-left: 20px;
+    font-size: 20px;
+    transition: 1s;
+}
+.likesContainer i:hover{
+    cursor: pointer;
+    transform: scale(1.6);
+    transition: 1s;
+}

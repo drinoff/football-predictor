@@ -1,14 +1,56 @@
+import { useState, useContext} from "react";
+
 import { Link } from "react-router-dom";
+import BasicModal from "../../BasicModal/BasicModal";
 
-
+import AuthContext from "../../../contexts/AuthContext";
 
 import "./Prediction.css";
+import predictionServices from "../../../services/predictionServices";
 
 const Prediction = ({ matchInfo, isRender, detailsStyle, id }) => {
+    const { user } = useContext(AuthContext);
+    const [likes, setLikes] = useState(matchInfo.likes?.length||0);
+    const [openModal, setOpenModal] = useState(false);
+    const [msg, setMsg] = useState("");
     const urlMatchInfo = matchInfo.match.replaceAll(" ", "");
     const matchstatus = matchInfo.matchDetails.fixture.status.short;
+
+    const onLikeClickHandler = () => {
+        if (matchInfo.email !== user.email && !matchInfo.likes?.includes(user.email)) {
+            setLikes(likes + 1);
+            if(!matchInfo.likes){
+                matchInfo.likes = [];
+            }
+            matchInfo.likes.push(user.email)
+            
+            predictionServices.updateLikes(id,matchInfo)
+            .then(res=>console.log(res));
+        } else {
+            if (matchInfo.email === user.email) {
+                setOpenModal(true);
+                setMsg("You can't like your own prediction");
+                setTimeout(() => {
+                    setOpenModal(false);
+                }, 500);
+            } else {
+                setOpenModal(true);
+                setMsg("You already Liked That Match");
+                setTimeout(() => {
+                    setOpenModal(false);
+                }, 500);
+            }
+        }
+    };
+
     return (
         <>
+            <BasicModal
+                openModal={openModal}
+                msg={msg}
+                secondMsg={""}
+                error={""}
+            />
             <article className="singlePrediction">
                 <div className="teamNamesAndFlags">
                     <img
@@ -23,24 +65,42 @@ const Prediction = ({ matchInfo, isRender, detailsStyle, id }) => {
                         alt={matchInfo.matchDetails.teams.away.name}
                     />
                 </div>
-                
-                
+
                 <div className="matchPrediction">{matchInfo.prediction}</div>
                 {isRender && (
                     <Link
                         className="predictionDetailsButton"
                         to={urlMatchInfo}
-                        state={{ matchInfo,id, urlMatchInfo }}
+                        state={{ matchInfo, id, urlMatchInfo }}
                     >
                         Details
                     </Link>
                 )}
-                
+
                 {matchInfo.matchDetails.predictionStatus === true ? (
-                    <span className = {`predictionStatus ${detailsStyle}`}>{matchstatus === "FT" ? <i className="fas fa-check"></i> : ""}</span>
+                    <span className={`predictionStatus ${detailsStyle}`}>
+                        {matchstatus === "FT" ? (
+                            <i className="fas fa-check"></i>
+                        ) : (
+                            ""
+                        )}
+                    </span>
                 ) : (
-                    <span className = {`predictionStatus ${detailsStyle}`} >{matchstatus === "FT" ? <i className="fas fa-times"></i> : ""}</span>
+                    <span className={`predictionStatus ${detailsStyle}`}>
+                        {matchstatus === "FT" ? (
+                            <i className="fas fa-times"></i>
+                        ) : (
+                            ""
+                        )}
+                    </span>
                 )}
+                <div className="likesContainer">
+                    <p className="likes">Likes:{likes}</p>
+                    <i
+                        onClick={onLikeClickHandler}
+                        className="fas fa-heart"
+                    ></i>
+                </div>
             </article>
         </>
     );
