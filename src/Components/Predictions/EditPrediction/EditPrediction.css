@@ -3,6 +3,9 @@
 .editFormStyle{
     margin-top: 80px;
 }
+.formStyle{
+    text-align: center;
+}
 .editMatchName,
 .editPrediction,
 .editDescription{
@@ -28,4 +31,7 @@
 .editFormButton:hover {
     background: #515BA4;
     cursor: pointer;
+}
+option{
+    background: #0B0F19;
 }
