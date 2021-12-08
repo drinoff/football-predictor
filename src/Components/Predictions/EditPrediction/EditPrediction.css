@@ -1,0 +1,31 @@
+/* form input uses css from Contact.css */
+
+.editFormStyle{
+    margin-top: 80px;
+}
+.editMatchName,
+.editPrediction,
+.editDescription{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+.editDescriptionLabel{
+    margin-bottom: 20px;
+}
+
+.editFormButton {
+    background: #7582EB;
+    width: 20%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 900;
+}
+
+.editFormButton:hover {
+    background: #515BA4;
+    cursor: pointer;
+}
