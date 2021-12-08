@@ -23,6 +23,7 @@
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 253px;
 }
 
 .guestWelcome p{
@@ -37,7 +38,7 @@
 .logoContainer img{
     width: 100%;
     height: 100%;
-    animation: rotating 4s linear infinite;
+    animation: rotating 6s linear infinite;
     
 }
 .fa-circle{
@@ -45,19 +46,10 @@
     color: #0B0F19;
     z-index: 2;
     position: absolute;
-    left: 500px;
-    animation: glow 1s ease-in-out infinite alternate;
+    left: 32.5%;
     text-transform: rotate(360deg);
 }
-@keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-    }
-    
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
-    }
-  }
+
 
   @keyframes rotating {
     from {
