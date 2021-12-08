@@ -62,7 +62,8 @@ const CreatePrediction = () => {
             selectedMatchPrediction,
             matchDetails,
             selectedMatchH2H,
-            email
+            email,
+            likes:[]
         }
         predictionServices.postPrediction(body)
         setMatchInputName();
