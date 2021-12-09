@@ -12,7 +12,7 @@ export default function BasicModal({ openModal, msg, secondMsg, errorMsg }) {
         }
     }, [openModal]);
     const handleClose = () => setOpen(false);
-
+    console.log(errorMsg)
     return (
         <div>
             <Modal
@@ -41,7 +41,7 @@ export default function BasicModal({ openModal, msg, secondMsg, errorMsg }) {
                         variant="h6"
                         component="h2"
                     >
-                        {errorMsg? errorMsg : msg}
+                        {errorMsg ? errorMsg : msg}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         {errorMsg ? '' : secondMsg}

@@ -20,7 +20,7 @@ const Login = () => {
         const formData = new FormData(e.target);
         const email = formData.get("email");
         const password = formData.get("password");
-
+        
         authServices.login(email, password).then((authData) => {
             const user = {
                 email: authData.user.email,
@@ -37,13 +37,14 @@ const Login = () => {
             }, 2000);
 
             }).catch((err) => {
-                setError(err.message);
+                setError('Invalid Email or Password');
                 setOpenModal(true);
                 
-            });
-            setTimeout(() => {
+                setTimeout(() => {
+                    setOpenModal(false);
+                }, 500);
                 navigate('/login')
-            }, 2000);
+            });
             
             
         
