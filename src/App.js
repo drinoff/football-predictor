@@ -53,6 +53,7 @@ function App() {
                     <Route path="predictions/:match" element={<PredictionDetails />}/>
                     <Route path="predictions/:id/edit" element={<Editprediction />}/>
                     <Route path="myPredictions" element={<MyPredictions />} />
+                    <Route path="myPredictions/:match" element={<PredictionDetails />}/>
                     <Route path="register" element={<Register />} />
                     <Route path="login" element={<Login />} />
                     <Route path="logout" element={<Logout />} />
