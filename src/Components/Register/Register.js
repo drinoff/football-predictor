@@ -26,8 +26,15 @@ const Register = (props) => {
             setOpenModal(true);
             setTimeout(() => {
                 setOpenModal(false);
-            }, 500);
-            navigate("/register");
+                navigate("/register");
+            }, 1000);
+        } else if (password.length < 6) {
+            setError("Password must be at least 6 characters");
+            setOpenModal(true);
+            setTimeout(() => {
+                setOpenModal(false);
+                navigate("/register");
+            }, 1000);
         } else {
             authServices
                 .register(email, password)
@@ -39,11 +46,21 @@ const Register = (props) => {
                         isAuthenticated: true,
                     };
                     register(user);
-                    navigate("/");
+                    setError(null);
+                    setOpenModal(true);
+                    setTimeout(() => {
+                        navigate("/");
+                    }, 2000);
                 })
-                .catch((err) => {});
+                .catch((err) => {
+                    setError(err.message);
+                    setOpenModal(true);
+                    setTimeout(() => {
+                        navigate("/register");
+                        setOpenModal(false);
+                    }, 1000);
+                });
         }
-        console.log(error)
     };
     return (
         <Box
