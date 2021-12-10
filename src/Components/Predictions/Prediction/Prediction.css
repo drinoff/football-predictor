@@ -72,7 +72,7 @@
 }
 .predictionsStatusDetailPage{
     position: absolute;
-    right: 180px;
+    right: 250px;
 }
 
 .likesContainer{
@@ -86,6 +86,7 @@
     padding-left: 20px;
     font-size: 20px;
     transition: 1s;
+    color: #7582EB;
 }
 .likesContainer i:hover{
     cursor: pointer;

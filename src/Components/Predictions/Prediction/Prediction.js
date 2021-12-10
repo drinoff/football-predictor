@@ -19,14 +19,15 @@ const Prediction = ({ matchInfo, isRender, detailsStyle, id }) => {
 
     const onLikeClickHandler = () => {
         if (user.email === '') {
+            setMsg(null)
             setMsg("You must be logged in to like a prediction");
             setOpenModal(true);
             setTimeout(() => {
                 setOpenModal(false);
+                navigate("/login");
             }, 2000);
-            navigate("/login");
         }
-        if (
+        else if (
             matchInfo.email !== user.email &&
             !matchInfo.likes?.includes(user.email)
         ) {

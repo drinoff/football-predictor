@@ -20,34 +20,33 @@ const Login = () => {
         const formData = new FormData(e.target);
         const email = formData.get("email");
         const password = formData.get("password");
-        
-        authServices.login(email, password).then((authData) => {
-            const user = {
-                email: authData.user.email,
-                accessToken: authData.user.accessToken,
-                uid: authData.user.uid,
-                isAuthenticated: true,
-            }
 
-            setEmail(user.email);
-            login(user);
-            setOpenModal(true);
-            setTimeout(() => {
-                navigate("/");
-            }, 2000);
+        authServices
+            .login(email, password)
+            .then((authData) => {
+                const user = {
+                    email: authData.user.email,
+                    accessToken: authData.user.accessToken,
+                    uid: authData.user.uid,
+                    isAuthenticated: true,
+                };
 
-            }).catch((err) => {
-                setError('Invalid Email or Password');
+                setEmail(user.email);
+                login(user);
+                setError(null);
                 setOpenModal(true);
-                
+                setTimeout(() => {
+                    navigate("/");
+                }, 2000);
+            })
+            .catch((err) => {
+                setError("Invalid Email or Password");
+                setOpenModal(true);
                 setTimeout(() => {
                     setOpenModal(false);
                 }, 500);
-                navigate('/login')
+                navigate("/login");
             });
-            
-            
-        
     };
     return (
         <Box
