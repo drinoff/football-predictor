@@ -1,9 +1,9 @@
 const BASE_URL =
     "https://football-predictor-3416d-default-rtdb.europe-west1.firebasedatabase.app/";
-const postPrediction = (body) => {
+const postPrediction = (data) => {
     fetch(`${BASE_URL}predictions.json`, {
         method: "POST",
-        body: JSON.stringify(body),
+        body: JSON.stringify(data),
     });
 };
 const getPredictions = () => {
@@ -18,10 +18,10 @@ const getPredictionById = (id) => {
     );
 };
 
-const editPrediction = (id, body) => {
+const editPrediction = (id, data) => {
     return fetch(`${BASE_URL}predictions/${id}.json`, {
         method: "PUT",
-        body: JSON.stringify(body),
+        body: JSON.stringify(data),
     }).then((res) => res.json());
 };
 
@@ -31,10 +31,10 @@ const deletePrediction = (id) => {
     }).then((res) => res.json());
 };
 
-const updateLikes = (id, body) => {
+const updateLikes = (id, data) => {
     return fetch(`${BASE_URL}predictions/${id}.json`, {
         method: "PUT",
-        body: JSON.stringify(body),
+        body: JSON.stringify(data),
     }).then((res) => res.json());
 };
 
