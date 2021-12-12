@@ -19,7 +19,7 @@ exports.handler = async (event) => {
     if (!data.message || !data.contactName || !data.contactEmail) {
         return {
             statusCode: 422,
-            body: "Name, email, and message are required.",
+            body: "Name, email, and message are required."
         };
     }
 
