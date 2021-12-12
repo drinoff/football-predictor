@@ -1,4 +1,4 @@
-const mailjet = require("node-mailjet").connect('0bee7d65c3418ff8960d2c64f99b2464', '4d2771943c1f2ebd9efd57ad56bc4eb9'
+const mailjet = require("node-mailjet").connect(process.env.MAILJET_API_KEY, process.env.MAILJET_SECRET
 );
 
 const EMAIL = process.env.EMAIL_ADDRESS;
