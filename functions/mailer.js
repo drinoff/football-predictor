@@ -1,19 +1,12 @@
-const mailgun = require("mailgun-js")
+const sgMail = require('@sendgrid/mail')
 
 const EMAIL = process.env.EMAIL_ADDRESS;
-const DOMAIN = process.env.MAILGUN_DOMAIN;
-const API_KEY = process.env.MAILGUN_API_KEY;
+const API_KEY = process.env.SENDGRID_API_KEY;
+sgMail.setApiKey(API_KEY);
 
-const mg = mailgun({apiKey: API_KEY, domain: DOMAIN});
+
 
 exports.handler = async (event) => {
-    if (event.httpMethod !== "POST") {
-        return {
-            statusCode: 405,
-            body: "Method Not Allowed",
-            headers: { Allow: "POST" },
-        };
-    }
 
     const data = JSON.parse(event.body);
     if (!data.message || !data.name || !data.email) {
@@ -23,22 +16,24 @@ exports.handler = async (event) => {
         };
     }
 
-    const mailgunData = {
-        from: data.email,
-        to: EMAIL,
-        subject: `New contact from ${data.name}`,
+    const msg = {
+        to: EMAIL, // Change to your recipient
+        from: data.email, // Change to your verified sender
+        subject: `You got email from ${data.name}`,
         text: data.message,
-    };
-
-    mg
-        .messages()
-        .send(mailgunData)
-        .then(() => ({
-            statusCode: 200,
-            body: "Your message was sent successfully! We'll be in touch.",
-        }))
-        .catch((error) => ({
-            statusCode: 422,
-            body: "There was an error sending your message. Please try again later.",
-        }));
-};
+      }
+      return sgMail
+        .send(msg)
+        .then(() => {
+            return {
+                statusCode: 422,
+                body: "Message sent successfully.Well get in touch shortly!"
+            };
+        })
+        .catch((error) => {
+            return {
+                statusCode: 422,
+                body: error.toString()
+            };
+        })
+    }
