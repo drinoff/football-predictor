@@ -13,7 +13,7 @@ exports.handler = async (event) => {
         };
     }
 
-    const transporter = nodemailer.createTransport({
+    var transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
             user: EMAIL,
@@ -21,24 +21,18 @@ exports.handler = async (event) => {
         },
     });
 
-    const mailOptions = {
+    var mailOptions = {
         from: EMAIL,
-        to: EMAIL,
-        subject: "Football-predictor user email from " + data.name,
-        text: data.message + "\n\n" + data.email,
+        to: "sisi236@gmail.com",
+        subject: "Sending Email using Node.js",
+        text: "That was easy!",
     };
 
-    return transporter.sendMail(mailOptions, function (error, info) {
+    transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            return {
-                statusCode: 422,
-                body: JSON.stringify(error.response),
-            };
+            console.log(error);
         } else {
-            return {
-                statusCode: 200,
-                body: JSON.stringify(info.response),
-            };
+            console.log("Email sent: " + info.response);
         }
     });
 };
