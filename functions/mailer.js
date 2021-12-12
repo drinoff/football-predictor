@@ -1,9 +1,8 @@
-const sgMail = require('@sendgrid/mail')
+var nodemailer = require('nodemailer');
 
 const EMAIL = process.env.EMAIL_ADDRESS;
 const API_KEY = process.env.SENDGRID_API_KEY;
-sgMail.setApiKey(API_KEY);
-
+const PASSWORD = process.env.EMAIL_PASSWORD;
 
 
 exports.handler = async (event) => {
@@ -16,24 +15,27 @@ exports.handler = async (event) => {
         };
     }
 
-    const msg = {
-        to: EMAIL, // Change to your recipient
-        from: data.email, // Change to your verified sender
-        subject: `You got email from ${data.name}`,
-        text: data.message,
-      }
-      return sgMail
-        .send(msg)
-        .then(() => {
-            return {
-                statusCode: 422,
-                body: "Message sent successfully.Well get in touch shortly!"
-            };
-        })
-        .catch((error) => {
-            return {
-                statusCode: 422,
-                body: error.toString()
-            };
-        })
+    
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: EMAIL,
+    pass: PASSWORD
+  }
+});
+
+var mailOptions = {
+  from: EMAIL,
+  to: EMAIL,
+  subject: 'Football-predictor user email from ' + data.name,
+  text: data.message + '\n\n' + data.email
+};
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
     }
