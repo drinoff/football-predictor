@@ -1,44 +1,46 @@
-const nodemailer = require("nodemailer");
+const mailjet = require("node-mailjet").connect('0bee7d65c3418ff8960d2c64f99b2464', '4d2771943c1f2ebd9efd57ad56bc4eb9'
+);
 
 const EMAIL = process.env.EMAIL_ADDRESS;
 
-const PASSWORD = process.env.PASSWORD;
 
 exports.handler = async (event) => {
-    const data = JSON.parse(event.body);
-    if (!data.message || !data.name || !data.email) {
-        return {
-            statusCode: 422,
-            body: "Name, email, and message are required.",
-        };
-    }
+    const data = JSON.parse(event.body)
+    
+      if (!data.email || !data.name || !data.message) {
+        return { statusCode: 422, body: 'Name, email, and message are required.' }
+      }
 
-    var transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-            user: EMAIL,
-            pass: PASSWORD,
-        },
+    const request = mailjet.post("send", { version: "v3.1" }).request({
+        Messages: [
+            {
+                From: {
+                    Email: EMAIL,
+                    Name: data.email,
+                },
+                To: [
+                    {
+                        Email: EMAIL,
+                        Name: 'Drinoff',
+                    },
+                ],
+                Subject: data.name,
+                TextPart:data.message,
+                
+            },
+        ],
     });
-
-    var mailOptions = {
-        from: EMAIL,
-        to: "sisi236@gmail.com",
-        subject: "Sending Email using Node.js",
-        text: "That was easy!",
-    };
-
-    return transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            return {
-                statusCode: 500,
-                body: JSON.stringify(error),
-            };
-        } else {
+    return request
+        .then((result) => {
             return {
                 statusCode: 200,
-                body: JSON.stringify(info),
+                body: JSON.stringify(result.body),
             };
-        }
-    });
+        })
+        .catch((err) => {
+            return {
+                statusCode: 500,
+                body: JSON.stringify(err.statusCode),
+            };
+        });
 };
