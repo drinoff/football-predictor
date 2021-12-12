@@ -36,9 +36,9 @@ const ContactForm = (props) => {
                     setError(null);
                     setOpenModal(true);
                     setTimeout(() => {
-                        setOpenModal(false);
                         navigate("/contact");
                         e.target.reset();
+                        setOpenModal(false);
                     }, 2000);
                 })
                 .catch((err) => {
