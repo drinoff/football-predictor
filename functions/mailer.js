@@ -1,8 +1,8 @@
 var nodemailer = require('nodemailer');
 
 const EMAIL = process.env.EMAIL_ADDRESS;
-const API_KEY = process.env.SENDGRID_API_KEY;
-const PASSWORD = process.env.EMAIL_PASSWORD;
+
+const PASSWORD = process.env.PASSWORD;
 
 
 exports.handler = async (event) => {
