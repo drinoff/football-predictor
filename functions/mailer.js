@@ -8,7 +8,7 @@ exports.handler = async (event) => {
     const data = JSON.parse(event.body)
     
       if (!data.email || !data.name || !data.message) {
-        return { statusCode: 422, body: 'Name, email, and message are required.' }
+        return { statusCode: 422, body: JSON.stringify('Name, email, and message are required.') }
       }
 
     const request = mailjet.post("send", { version: "v3.1" }).request({
