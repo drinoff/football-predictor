@@ -38,7 +38,7 @@ const ContactForm = (props) => {
                 <label  htmlFor="message">Message</label>
                 <textarea  id="message" name='message' type="text" />
             </div>
-            <input className = 'contactFormButton' type="button" value="Let's Talk" />
+            <input className = 'contactFormButton' type="submit" value="Let's Talk" />
         </form>
     );
 };
