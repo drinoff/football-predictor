@@ -28,11 +28,17 @@ exports.handler = async (event) => {
         text: "That was easy!",
     };
 
-    transporter.sendMail(mailOptions, function (error, info) {
+    return transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            console.log(error);
+            return {
+                statusCode: 500,
+                body: JSON.stringify(error),
+            };
         } else {
-            console.log("Email sent: " + info.response);
+            return {
+                statusCode: 200,
+                body: JSON.stringify(info),
+            };
         }
     });
 };
