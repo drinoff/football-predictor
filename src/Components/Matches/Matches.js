@@ -34,6 +34,7 @@ const Matches = () => {
     const onMatchClickHandler = (id) => {
         const selectedMatch = matches.find((match) => match.fixture.id === id);
         setMatchDetail(selectedMatch);
+        console.log(selectedMatch);
         const homeId = selectedMatch.teams.home.id;
         const awayId = selectedMatch.teams.away.id;
         matchServices

@@ -1,11 +1,29 @@
 import { Doughnut } from "react-chartjs-2";
 
-const Chart = ({h2h}) => {
-    let homeWins = h2h.response.filter(x=>x.teams.home.winner===true).length;
-    let awayWins = h2h.response.filter(x=>x.teams.away.winner===true).length;
-    let draws = h2h.response.length - homeWins - awayWins;
+const Chart = ({h2h, teams}) => {
+    console.log(h2h);
+    const home = teams.home.name;
+    let homeWins = 0;
+    const away = teams.away.name;
+    let awayWins = 0;
+    let draws = 0;
+
+    h2h.response.forEach(element => {
+        if(element.teams.home.name === home && element.teams.home.winner === true) {
+            homeWins++;
+        }else if(element.teams.away.name === home && element.teams.away.winner===true){
+            homeWins++;
+        }else if(element.teams.away.name === away && element.teams.away.winner===true){
+            awayWins++;
+        }else if(element.teams.home.name === away && element.teams.home.winner===true){
+            awayWins++;
+        }else{
+            draws++;
+        }
+    });;
+    console.log(homeWins, awayWins, draws);
     const data = {
-        labels: ["Home Wins", "Away Wins", "Draws"],
+        labels: [home +'wins', away + 'wins', "Draws"],
         datasets: [
             {
                 label: "# of Votes",

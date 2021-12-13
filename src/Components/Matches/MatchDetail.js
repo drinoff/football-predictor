@@ -38,7 +38,9 @@ const MatchDetail = ({
             </div>
             <div className='h2hChart'>
                 {h2h
-                ? <Chart h2h={h2h}/>
+                ? <Chart 
+                h2h={h2h}
+                teams = {matchDetail.teams}/>
                 :''}
             </div>
         </>
