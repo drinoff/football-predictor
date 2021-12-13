@@ -1,7 +1,6 @@
 import { Doughnut } from "react-chartjs-2";
 
 const Chart = ({h2h, teams}) => {
-    console.log(h2h);
     const home = teams.home.name;
     let homeWins = 0;
     const away = teams.away.name;
@@ -21,7 +20,7 @@ const Chart = ({h2h, teams}) => {
             draws++;
         }
     });;
-    console.log(homeWins, awayWins, draws);
+
     const data = {
         labels: [home +'wins', away + 'wins', "Draws"],
         datasets: [

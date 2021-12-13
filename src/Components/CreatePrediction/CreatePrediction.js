@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import BasicModal from "../BasicModal/BasicModal";
 import MatchItem from "../Matches/MatchItem";
 import MatchPrediction from "./MatchPrediction/MatchPrediction";
+import FilterButtonContainer from '../Matches/FilterButtonContainer/FilterButtonContainer';
 
 import AuthContext from "../../contexts/AuthContext";
 import matchServices from "../../services/matchServices";
@@ -15,6 +16,7 @@ import "./CreatePrediction.css";
 const CreatePrediction = () => {
     const navigate = useNavigate();
     const [predictionMatches, setPredictionMatches] = useState([]);
+    const [filteredMatches,setFilteredMatches] = useState([]);
     const [selectedMatchPrediction, setSelectedMatchPrediction] = useState();
     const [matchDetails, setMatchDetails] = useState();
     const [selectedMatchH2H, setSelectedMatchH2h] = useState();
@@ -37,6 +39,7 @@ const CreatePrediction = () => {
                             match.fixture.status.short === "NS"
                     );
                 setPredictionMatches(sortedData);
+                setFilteredMatches(sortedData);
             })
             .catch((error) => console.log("error", error));
     }, []);
@@ -92,6 +95,18 @@ const CreatePrediction = () => {
             }, 2000);
         }
     };
+
+    const onFilterButtonClickHandler = (e) => {
+        setFilteredMatches(
+            matchServices.sortMatchesByCountry(predictionMatches, e.target.textContent)
+        );
+    };
+
+    const onSearchButtonChangeHandler = (e) => {
+        setFilteredMatches(
+            matchServices.searchMatch(predictionMatches, e.target.value)
+        );
+    };
     return (
         <div className="predictionPageContainer">
             <BasicModal
@@ -104,7 +119,11 @@ const CreatePrediction = () => {
                 className="predictionContainer"
                 sx={{ bgcolor: "#111827", height: "auto", width: "33%" }}
             >
-                {predictionMatches.map((match) => (
+                <FilterButtonContainer
+                onButtonClick={onFilterButtonClickHandler}
+                onSearchButtonChange={onSearchButtonChangeHandler}
+            />
+                {filteredMatches.map((match) => (
                     <MatchItem
                         match={match}
                         key={match.fixture.id}
