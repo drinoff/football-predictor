@@ -21,9 +21,9 @@ const Predictions = (props) => {
                     .getMatchById(prediction[1].matchDetails.fixture.id)
                     .then((matchUpdate) => {
                         prediction[1].matchDetails.fixture.status.short =
-                            matchUpdate.response[0].fixture.status.short;
+                            matchUpdate.data.response[0].fixture.status.short;
                         prediction[1].matchDetails.predictionStatus = getStatus(
-                            matchUpdate,
+                            matchUpdate.data,
                             prediction[1].prediction
                         );
                     });

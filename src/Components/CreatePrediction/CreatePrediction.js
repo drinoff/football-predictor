@@ -27,7 +27,7 @@ const CreatePrediction = () => {
         matchServices
             .getAllMatches()
             .then((data) => {
-                let sortedData = data.response
+                let sortedData = data.data.response
                     .sort((a, b) =>
                         a.league.country > b.league.country ? 1 : -1
                     )
@@ -42,7 +42,7 @@ const CreatePrediction = () => {
     }, []);
     const onMatchClickHandler = (fixture) => {
         matchServices.getMatchPrediction(fixture).then((data) => {
-            setSelectedMatchPrediction(data);
+            setSelectedMatchPrediction(data.data);
         });
         const selectedMatch = predictionMatches.find(
             (match) => match.fixture.id === fixture
@@ -52,7 +52,7 @@ const CreatePrediction = () => {
         const homeId = selectedMatch.teams.home.id;
         const awayId = selectedMatch.teams.away.id;
         matchServices.getH2H(homeId, awayId).then((data) => {
-            setSelectedMatchH2h(data);
+            setSelectedMatchH2h(data.data);
         });
     };
 

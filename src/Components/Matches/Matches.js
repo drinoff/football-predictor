@@ -20,7 +20,6 @@ const Matches = () => {
         matchServices
             .getAllMatches()
             .then((data) => {
-                console.log(data)
                 let sortedData = data.data.response.sort((a, b) =>
                     a.league.country > b.league.country ? 1 : -1
                 );
@@ -40,7 +39,7 @@ const Matches = () => {
         matchServices
             .getH2H(homeId, awayId)
             .then((data) => {
-                seth2h(data);
+                seth2h(data.data);
             })
             .catch((error) => console.log("error", error));
     };
