@@ -21,7 +21,7 @@ const Matches = () => {
             .getAllMatches()
             .then((data) => {
                 console.log(data)
-                let sortedData = data.response.sort((a, b) =>
+                let sortedData = data.data.response.sort((a, b) =>
                     a.league.country > b.league.country ? 1 : -1
                 );
                 setTimeout(() => {

@@ -8,7 +8,7 @@ exports.handler = async (event, context) => {
 
     return fetch(API_ENDPOINT + path, {
         headers: {
-        "x-apisports-key": API_KEY,
+        "x-apisports-key": process.env.API_FOOTBALL,
         }
     })
         .then((res) => res.json())
