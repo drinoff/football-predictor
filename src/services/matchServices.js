@@ -1,15 +1,16 @@
 import todaysDate from "../utils/todaysDate.js";
 import { tzUser } from "../utils/timeZoneFinder.js";
 
-const BASE_URL = "https://v3.football.api-sports.io/";
+const BASE_URL = '/.netlify/functions/mailer';
 
 const getAllMatches = () => {
+    const path = `fixtures?date=${todaysDate()}&timezone=${tzUser}`;
     return fetch(
-        `${BASE_URL}fixtures?date=${todaysDate()}&timezone=${tzUser}`,
-        {
-            headers: {
-                "x-apisports-key": "63386f355c9be795e7feeb0b81b3dbef",
-            },
+        `${BASE_URL}`,{
+            method: 'POST',
+            body: JSON.stringify({
+                path
+            }),
         }
     ).then((res) => res.json());
 };
