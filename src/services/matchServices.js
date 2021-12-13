@@ -2,10 +2,9 @@ import todaysDate from "../utils/todaysDate.js";
 import { tzUser } from "../utils/timeZoneFinder.js";
 
 const BASE_URL = '/.netlify/functions/matchRequester';
-const pesho = process.env.REACT_APP_PESHO;
+
 const getAllMatches = () => {
     const path = `fixtures?date=${todaysDate()}&timezone=${tzUser}`;
-    console.log(pesho)
     return fetch(
         `${BASE_URL}`,{
             method: 'POST',
