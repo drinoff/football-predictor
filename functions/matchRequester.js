@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const API_KEY = process.env.API_FOOTBALL_API_KEY;
+const API_KEY = '63386f355c9be795e7feeb0b81b3dbef';
 const API_ENDPOINT = "https://v3.football.api-sports.io/";
 
 exports.handler = async (event, context) => {
