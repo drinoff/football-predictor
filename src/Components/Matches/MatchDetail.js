@@ -34,7 +34,7 @@ const MatchDetail = ({
             </div>
             <div className="refereeAndDate">
                 <p className="eventDate">{matchDetail.fixture.date.substring(0, 16).replace('T',' - ')}</p>
-                <p className="eventReferee">{"Referee: " + matchDetail.fixture.referee}</p>
+                <p className="eventReferee">{matchDetail.fixture.referee?"Referee: " + matchDetail.fixture.referee:'No Info'}</p>
             </div>
             <div className='h2hChart'>
                 {h2h
