@@ -3,7 +3,8 @@ const API_KEY = '63386f355c9be795e7feeb0b81b3dbef';
 const API_ENDPOINT = "https://v3.football.api-sports.io/";
 
 exports.handler = async (event, context) => {
-    const path = event.path;
+    const data = JSON.parse(event.body);
+    const path = data.path;
 
     return fetch(API_ENDPOINT + path, {
         headers: {
