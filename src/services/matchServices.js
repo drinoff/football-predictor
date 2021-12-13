@@ -1,7 +1,7 @@
 import todaysDate from "../utils/todaysDate.js";
 import { tzUser } from "../utils/timeZoneFinder.js";
 
-const BASE_URL = '/.netlify/functions/mailer';
+const BASE_URL = '/.netlify/functions/matchRequester';
 
 const getAllMatches = () => {
     const path = `fixtures?date=${todaysDate()}&timezone=${tzUser}`;
