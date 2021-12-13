@@ -14,28 +14,29 @@ const getAllMatches = () => {
         }
     ).then((res) => res.json());
 };
-const getAllLiveMatches = () => {
-    return fetch(`${BASE_URL}fixtures?live=all&timezone=${tzUser}`, {
-        headers: {
-            "x-apisports-key": "63386f355c9be795e7feeb0b81b3dbef",
-        },
-    }).then((res) => res.json());
-};
 
 const getMatchById = (id) => {
-    return fetch(`${BASE_URL}fixtures?id=${id}`, {
-        headers: {
-            "x-apisports-key": "63386f355c9be795e7feeb0b81b3dbef",
-        },
-    }).then((res) => res.json());
+    const path = `fixtures?id=${id}`
+    return fetch(
+        `${BASE_URL}`,{
+            method: 'POST',
+            body: JSON.stringify({
+                path
+            }),
+        }
+    ).then((res) => res.json());
 };
 
 const getH2H = (homeId, awayId) => {
-    return fetch(`${BASE_URL}fixtures/headtohead?h2h=${homeId}-${awayId}`, {
-        headers: {
-            "x-apisports-key": "63386f355c9be795e7feeb0b81b3dbef",
-        },
-    }).then((res) => res.json());
+    const path = `fixtures/headtohead?h2h=${homeId}-${awayId}`;
+    return fetch(
+        `${BASE_URL}`,{
+            method: 'POST',
+            body: JSON.stringify({
+                path
+            }),
+        }
+    ).then((res) => res.json());
 };
 
 const sortMatchesByCountry = (matches, country) => {
@@ -107,11 +108,15 @@ const searchMatch = (matches, searchString) => {
 };
 
 const getMatchPrediction = (fixture) => {
-    return fetch(`${BASE_URL}predictions?fixture=${fixture}`, {
-        headers: {
-            "x-apisports-key": "63386f355c9be795e7feeb0b81b3dbef",
-        },
-    }).then((res) => res.json());
+    const path = `predictions?fixture=${fixture}`
+    return fetch(
+        `${BASE_URL}`,{
+            method: 'POST',
+            body: JSON.stringify({
+                path
+            }),
+        }
+    ).then((res) => res.json());
 };
 
 const matchServices = {
@@ -121,7 +126,6 @@ const matchServices = {
     searchMatch,
     getMatchPrediction,
     getMatchById,
-    getAllLiveMatches
 };
 
 export default matchServices;
