@@ -10,7 +10,6 @@ Football Predictor is a football matches prediction Webb App. It comes with a lo
 1. <a href="#overview">Overview</a>
 2. <a href="#builtWith">Built with</a>
 3. <a href="#appConfig">Application Configuration</a>
-4. <a href="#screens">Screen Shots</a>
  
 
 
@@ -30,20 +29,25 @@ Football Predictor is a web application for football predictions. It has the fol
 <h2 id="builtWith">Built With</h2>
 
 - React JS as Front End
-- Netlify as Back End
-- Google Real Time Data Base
+- Deployed on Netlify.
+- Netlify Functions (request to third party API)
+- Netlify Environment variables
+- Google Real Time Data Base (loggged user made requests)
+- Firebase SDK (Authentication)
 - React Router v6
 - api-football.com (3-rd party REST API)
 - Material UI (some containers)
 - React Chart JS v2
-- Firebase SDK (Authentication)
+- node-fetch
 - React Hooks (Data Persistance)
 - Context API (Keeping User Data)
 - Skeleton Loader (Material UI)
+- mailjet nodeJs wrapper (sending emails from contact form to me)
 - Custom HTML and CSS
+- custom valiation and error handling (with Material UI Modal)
 
 <h2 id="appConfig">Application Configurations</h2>
-<img width="953" alt="App Diagram" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/FootballPredictor.drawio.svg?alt=media&token=f6b5f0ee-d830-43b0-a681-272051b4bcf0">
+<img width="953" alt="App Diagram" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/FootballPredictorWorkflow.svg?alt=media&token=7e0e4d2e-ce20-4721-8889-981f159820f2">
  
 
 ### Available Scripts
