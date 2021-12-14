@@ -43,7 +43,7 @@ Football Predictor is a web application for football predictions. It has the fol
 - Custom HTML and CSS
 
 <h2 id="appConfig">Application Configurations</h2>
-<img width="953" alt="App Diagram" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/FootballPredictor.svg?alt=media&token=f179d3c7-4049-4bd5-8b8c-304a87f8190f">
+<img width="953" alt="App Diagram" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/FootballPredictor.drawio.svg?alt=media&token=f6b5f0ee-d830-43b0-a681-272051b4bcf0">
  
 
 ### Available Scripts
@@ -56,23 +56,6 @@ After cloning this Repository, you can open it with any code editor.
 ### Test Accounts
    - email: test@test.com / password: 123456
    - email: user@user.com / password: qwerty
- 
-<h2 id="screens">Screenshots</h2>
-
-### Home Page
-
-<img width="953" alt="Home page" src=>
-
-### Predictions Page
-
-
-
-### Create Prediction
-
-
-
-### Edit Prediction
-
 
 
 ## License
