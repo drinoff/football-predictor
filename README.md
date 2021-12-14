@@ -47,7 +47,7 @@ Football Predictor is a web application for football predictions. It has the fol
 - custom valiation and error handling (with Material UI Modal)
 
 <h2 id="appConfig">Application Configurations</h2>
-<img width="953" alt="App Diagram" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/FootballPredictorWorkflow.svg?alt=media&token=7e0e4d2e-ce20-4721-8889-981f159820f2">
+<img width="953" alt="App Diagram" src="https://firebasestorage.googleapis.com/v0/b/football-predictor-3416d.appspot.com/o/FootballPredictorWorkflow.svg?alt=media&token=5cebc02b-5633-4c7d-808a-17a1c9a7cbe3">
  
 
 ### Available Scripts
