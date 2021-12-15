@@ -7,6 +7,7 @@ import AuthContext from "../../contexts/AuthContext";
 import predictionServices from "../../services/predictionServices";
 import matchServices from "../../services/matchServices";
 import getStatus from "../../utils/getStatus";
+import {isAuth} from '../../HOC/isAuth';
 
 import "./MyPredictions.css";
 
@@ -112,4 +113,4 @@ const MyPredictions = () => {
     );
 };
 
-export default MyPredictions;
+export default isAuth(MyPredictions);
