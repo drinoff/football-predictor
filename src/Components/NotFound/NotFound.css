@@ -1,0 +1,32 @@
+.notFoundContainer{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.notFoundImage{
+    width: 12%;
+}
+.notFounfdErrorHeading{
+    color: #7582EB;
+}
+.secondaryError{
+    color: #A0AEC0;
+    font-size: 14px;
+}
+.notFoundButton {
+    background: #7582EB;
+    width: 10%;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 900;
+}
+
+.notFoundButton:hover {
+    background: #515BA4;
+    cursor: pointer;
+}
