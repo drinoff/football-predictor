@@ -1,7 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import notFound from "../../Assets/images/notFound.svg";
 import './NotFound.css';
 
 const NotFound = () => {
+    const navigate = useNavigate();
+    const onNotFoundButtonClickHandler = () => {
+        navigate('/');
+    }
     return (
         <div className="notFoundContainer">
             <h1 className="notFounfdErrorHeading">
@@ -12,7 +17,7 @@ const NotFound = () => {
                 Whichever it is, try using the navigation.
             </h3>
             <img className="notFoundImage" src={notFound} alt="404cat" />
-            <button className="notFoundButton">Back to Matches</button>
+            <button onClick={onNotFoundButtonClickHandler} className="notFoundButton">Back to Matches</button>
         </div>
     );
 };
