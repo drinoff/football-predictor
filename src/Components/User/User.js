@@ -49,6 +49,7 @@ const User = ({display, email}) => {
             <h2>{email}</h2>
             <Link to ='myPredictions'>My Predictions</Link>
             <Link to ='create'>Create Prediction</Link>
+            <Link to ='createSlip'>Create Betslip</Link>
             
         </div>
     );
