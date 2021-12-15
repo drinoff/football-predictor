@@ -22,7 +22,7 @@ const Chart = ({h2h, teams}) => {
     });;
 
     const data = {
-        labels: [home +'wins', away + 'wins', "Draws"],
+        labels: [home +' wins', away + ' wins', "Draws"],
         datasets: [
             {
                 label: "# of Votes",
