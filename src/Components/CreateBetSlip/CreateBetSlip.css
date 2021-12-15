@@ -1,0 +1,35 @@
+.predictionPageContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    left: auto;
+    right: auto;
+    
+}
+.betSlipForm{
+    width: 90%;
+    margin-top: 50px;
+}
+.slipContainer{
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    
+}
+.betSlipMatch{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 70px;
+
+}
+
+.betSlipMatch .betSlipMatchesInput{
+    width: 40%;
+
+}
+
+.betSlipMatch .singleBetPrediction{
+    width: 15%;
+}

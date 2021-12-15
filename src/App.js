@@ -10,6 +10,7 @@ import Predictions from "./Components/Predictions/Predictions";
 import About from "./Components/About/About";
 import Contact from "./Components/Contact/Contact";
 import CreatePrediction from "./Components/CreatePrediction/CreatePrediction";
+import CreateBetSlip from './Components/CreateBetSlip/CreateBetSlip';
 import PredictionDetails from "./Components/Predictions/PredictionDetails/PredictionDetails";
 import Login from "./Components/Login/Login";
 import Logout from "./Components/Logout/Logout";
@@ -52,6 +53,7 @@ function App() {
                     <Route path="about" element={<About />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="create" element={<CreatePrediction />} />
+                    <Route path='createSlip' element={<CreateBetSlip />} />
                     <Route path="predictions/:match" element={<PredictionDetails />}/>
                     <Route path="predictions/:id/edit" element={<Editprediction />}/>
                     <Route path="myPredictions" element={<MyPredictions />} />
