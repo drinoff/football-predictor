@@ -16,6 +16,7 @@ import Logout from "./Components/Logout/Logout";
 import Register from "./Components/Register/Register";
 import MyPredictions from "./Components/MyPredictions/MyPredictions";
 import Editprediction from "./Components/Predictions/EditPrediction/EditPrediction";
+import NotFound from "./Components/NotFound/NotFound";
 
 
 const initialUserData = {
@@ -45,6 +46,7 @@ function App() {
                 <Header />
 
                 <Routes>
+                    <Route path='*' element={<NotFound />} />
                     <Route path="/" element={<Matches />} />
                     <Route path="predictions" element={<Predictions />} />
                     <Route path="about" element={<About />} />
