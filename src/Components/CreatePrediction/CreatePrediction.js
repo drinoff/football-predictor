@@ -10,6 +10,7 @@ import FilterButtonContainer from '../Matches/FilterButtonContainer/FilterButton
 import AuthContext from "../../contexts/AuthContext";
 import matchServices from "../../services/matchServices";
 import predictionServices from "../../services/predictionServices";
+import {isAuth} from '../../HOC/isAuth';
 
 import "./CreatePrediction.css";
 
@@ -209,4 +210,4 @@ const CreatePrediction = () => {
     );
 };
 
-export default CreatePrediction;
+export default isAuth(CreatePrediction);
