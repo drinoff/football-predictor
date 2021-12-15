@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 import { Box } from "@mui/system";
 import BasicModal from "../BasicModal/BasicModal";
@@ -87,6 +88,14 @@ const Login = () => {
                 </div>
 
                 <input className="loginButton" type="submit" value="Login" />
+                <p className="dontHaveAnAcc">
+                    Don't have an account?{" "}
+                    <Link to="/register">
+                        <span className="registerLinkinLoginComp">
+                            Register
+                        </span>
+                    </Link>
+                </p>
             </form>
         </Box>
     );

@@ -74,3 +74,18 @@
     cursor: pointer;
 }
 
+.dontHaveAnAcc{
+    font-size: 12px;
+}
+.registerLinkinLoginComp{
+    font-weight: 700;
+    font-size: 14px;
+    color: #10B981;
+    text-decoration: none;
+    padding-left: 5px;
+}
+.registerLinkinLoginComp:hover{
+    color: #75FAC8;
+    text-decoration: none;
+}
+

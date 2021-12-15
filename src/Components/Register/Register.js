@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 import { Box } from "@mui/system";
 
@@ -114,6 +115,7 @@ const Register = (props) => {
                     type="submit"
                     value="Register"
                 />
+                <p className="alreadyGotAcc">Don't have an account? <Link to='/login' ><span className="loginLinkInRegisterComp">Login</span></Link></p>
             </form>
         </Box>
     );
