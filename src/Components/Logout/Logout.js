@@ -14,7 +14,6 @@ const Logut = () => {
     useEffect(() => {
     signOut(auth).then(() => {
         logout();
-        console.log(user)
         navigate("/")});
 }, [navigate,logout,user]);
     return null
