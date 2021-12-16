@@ -54,7 +54,7 @@ Football Predictor is a web application for football predictions. It has the fol
 After cloning this Repository, you can open it with any code editor.
 
 - npm install (the scripts installs all the packages which the application depends on.)
-- netlify dev (starts a local development server) Netlify CLI (Please use this in order to test the request to football API and the COntact Form)The requests wont triger with npm start script
+- netlify dev (starts a local development server http://localhost:8888) Netlify CLI (Please use this in order to test the request to football API and the COntact Form)The requests wont triger with npm start script
 
 
 ### Test Accounts
