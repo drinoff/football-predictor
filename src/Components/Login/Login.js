@@ -37,15 +37,14 @@ const Login = () => {
                 setError(null);
                 setOpenModal(true);
                 setTimeout(() => {
+                    setOpenModal(false);
                     navigate("/");
                 }, 2000);
             })
             .catch((err) => {
                 setError("Invalid Email or Password");
                 setOpenModal(true);
-                setTimeout(() => {
-                    setOpenModal(false);
-                }, 500);
+                setOpenModal(false);
                 navigate("/login");
             });
     };
