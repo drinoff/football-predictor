@@ -82,7 +82,7 @@ const Matches = () => {
                             />
                         ))
                     ) : (
-                        <MatchSkeletonLoader />
+                        <MatchSkeletonLoader className = 'skeletonLoader'/>
                     )}
                 </Box>
                 <Box

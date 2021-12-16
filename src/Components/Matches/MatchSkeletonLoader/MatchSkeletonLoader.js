@@ -12,6 +12,7 @@ const MatchSkeletonLoader = () => {
                 variant="rect"
                 width="100%"
                 height="20px"
+                className="skeleton"
             />
             <Skeleton
                 sx={{
