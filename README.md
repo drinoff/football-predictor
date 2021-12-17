@@ -10,6 +10,7 @@ Football Predictor is a football matches prediction Webb App. It comes with a lo
 1. <a href="#overview">Overview</a>
 2. <a href="#builtWith">Built with</a>
 3. <a href="#appConfig">Application Configuration</a>
+4. <a href="#license">License</a>
  
 
 
@@ -55,14 +56,13 @@ After cloning this Repository, you can open it with any code editor.
 
 - npm install (the scripts installs all the packages which the application depends on.)
 - netlify dev (starts a local development server http://localhost:8888) Netlify CLI (Please use this in order to test the request to football API and the COntact Form)The requests wont triger with npm start script
-
+- npm run cypress:open (opens cypress test runner)
 
 ### Test Accounts
    - email: test@test.com / password: 123456
    - email: user@user.com / password: qwerty
 
-
-## License
+<h2 id="license">License</h2>
 
 This project is licensed under the [MIT License](LICENSE).
 
