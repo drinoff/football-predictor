@@ -174,6 +174,7 @@ const CreatePrediction = () => {
                             <option value="Under 2,5">Under 2,5</option>
                             <option value="Over 1,5">Over 1,5</option>
                             <option value="Under 1,5">Under 1,5</option>
+                            <option value="BTS">BTS</option>
                         </select>
                     </div>
 
