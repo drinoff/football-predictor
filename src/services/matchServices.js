@@ -119,6 +119,18 @@ const getMatchPrediction = (fixture) => {
     ).then((res) => res.json());
 };
 
+const getMatchOdds = (fixture) => {
+    const path = `odds?fixture=${fixture}`
+    return fetch(
+        `${BASE_URL}`,{
+            method: 'POST',
+            body: JSON.stringify({
+                path
+            }),
+        }
+    ).then((res) => res.json());
+};
+
 const matchServices = {
     getAllMatches,
     getH2H,
@@ -126,6 +138,7 @@ const matchServices = {
     searchMatch,
     getMatchPrediction,
     getMatchById,
+    getMatchOdds
 };
 
 export default matchServices;
